@@ -10,7 +10,7 @@ import {
 } from "../../utils/Images";
 import ScrollToButton from "./ScrollToButton";
 
-const Section2 = () => {
+const Carousel = () => {
   const images = [
     Testimonio1,
     Testimonio2,
@@ -41,8 +41,8 @@ const Section2 = () => {
       setStartIndex((prevIndex) =>
         prevIndex === images.length - 1 ? 0 : prevIndex + 1
       );
-    }, 1000); // Intervalo de 1 segundo
-    return () => clearInterval(interval); // Limpia el intervalo cuando el componente se desmonta
+    }, 1000);
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -59,11 +59,10 @@ const Section2 = () => {
           {images.map((image, index) => (
             <div
               key={index}
-              className={`${
-                index >= startIndex && index < startIndex + 5
-                  ? "flex"
-                  : "hidden"
-              } duration-700 ease-in-out`}
+              className={`${index >= startIndex && index < startIndex + 5
+                ? "flex"
+                : "hidden"
+                } duration-700 ease-in-out`}
               data-carousel-item
             >
               <img
@@ -80,4 +79,4 @@ const Section2 = () => {
   );
 };
 
-export default Section2;
+export default Carousel;

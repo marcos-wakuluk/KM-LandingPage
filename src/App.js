@@ -4,7 +4,7 @@ import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
 import Discount from "./components/discounts/Discounts";
 import Section1 from "./components/sections/Section1";
-import Section2 from "./components/sections/Section2";
+import Carousel from "./components/sections/Carousel";
 import PlanSection from "./components/sections/PlanSection";
 import Section3 from "./components/sections/Section3";
 import FrequentQuestions from "./components/sections/FrequentQuestions";
@@ -17,7 +17,7 @@ function App() {
       <Discount />
       <Section1 />
       <PlanSection />
-      <Section2 />
+      <Carousel />
       <Section3 />
       <FrequentQuestions />
       <Section6 />
