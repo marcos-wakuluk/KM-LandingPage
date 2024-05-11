@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 const PlanSection = () => {
   return (
     <div className="py-8" id="planSection">
@@ -29,9 +31,11 @@ const PlanSection = () => {
             <p className="font-bold">
               Precios mensuales recurrentes con tarjeta de crédito/débito
             </p>
-            <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-4">
-              Quiero empezar
-            </button>
+            <Link to="/subscribe">
+              <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-4">
+                Quiero empezar
+              </button>
+            </Link>
           </div>
         </div>
         <div className="w-1/3 px-4">
@@ -58,9 +62,11 @@ const PlanSection = () => {
             <p className="font-bold">
               Precios mensuales recurrentes con tarjeta de crédito/débito
             </p>
-            <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-4">
-              Quiero empezar
-            </button>
+            <Link to="/subscribe">
+              <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-4">
+                Quiero empezar
+              </button>
+            </Link>
           </div>
         </div>
         <div className="w-1/3 px-4">
@@ -86,9 +92,11 @@ const PlanSection = () => {
             <p className="font-bold">
               Precios mensuales recurrentes con tarjeta de crédito/débito
             </p>
-            <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-4">
-              Quiero empezar
-            </button>
+            <Link to="/subscribe">
+              <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-4">
+                Quiero empezar
+              </button>
+            </Link>
           </div>
         </div>
       </div>
