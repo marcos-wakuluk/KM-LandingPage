@@ -1,0 +1,17 @@
+export const imagen1 = "/assets/asd.png";
+export const Testimonio1 = "/assets/testimonio1.jpeg";
+export const Testimonio2 = "/assets/testimonio2.jpeg";
+export const Testimonio3 = "/assets/testimonio3.jpeg";
+export const Testimonio4 = "/assets/testimonio4.jpeg";
+export const Testimonio5 = "/assets/testimonio5.jpeg";
+export const Testimonio6 = "/assets/testimonio6.jpeg";
+export const Testimonio7 = "/assets/testimonio7.jpeg";
+export const lucas = "/assets/lucas.jpeg";
+export const lucas1 = "/assets/lucas1.jpeg";
+export const lucas2 = "/assets/lucas2.jpeg";
+export const lucas3 = "/assets/lucas3.jpeg";
+export const lucas4 = "/assets/lucas4.jpeg";
+export const lucasBottomless1 = "/assets/lucas1-sin-fondo.jpeg";
+export const lucasBottomless2 = "/assets/lucas2-sin-fondo.jpeg";
+export const lucasBottomless3 = "/assets/lucas3-sin-fondo.jpeg";
+export const lucasBottomless4 = "/assets/lucas4-sin-fondo.jpeg";
