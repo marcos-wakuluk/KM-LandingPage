@@ -60,7 +60,7 @@ const FrequentQuestions = () => {
   };
 
   return (
-    <div className="flex bg-black justify-center items-center h-screen">
+    <div className="flex bg-black justify-center items-center">
       <div className="w-2/3 bg-black p-8">
         <h2 className="text-2xl font-bold text-center text-white mb-8">
           Preguntas frecuentes:
@@ -85,9 +85,8 @@ const FrequentQuestions = () => {
                       {question.question}
                     </button>
                     <p
-                      className={`mt-2 text-white overflow-hidden ${
-                        openQuestion === index ? "max-h-full" : "max-h-0"
-                      }`}
+                      className={`mt-2 text-white overflow-hidden ${openQuestion === index ? "max-h-full" : "max-h-0"
+                        }`}
                     >
                       {question.response}
                     </p>

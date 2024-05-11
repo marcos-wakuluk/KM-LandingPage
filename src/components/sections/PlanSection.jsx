@@ -1,5 +1,4 @@
 import React from "react";
-import { lucas1 } from "../../utils/Images";
 const PlanSection = () => {
   return (
     <div className="py-8" id="planSection">
