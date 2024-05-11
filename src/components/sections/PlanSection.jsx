@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 const PlanSection = () => {
   return (
-    <div className="py-8 bg-background" id="planSection">
-      <h2 className="text-4xl font-bold text-center">
+    <div className="py-8 bg-custom-black" id="planSection">
+      <h2 className="text-4xl font-bold text-white text-center">
         Selecciona el plan
       </h2>
       <h2 className="text-4xl font-bold text-center mb-8 text-blue-500">
@@ -13,8 +13,11 @@ const PlanSection = () => {
       <div className="flex justify-around">
         <div className="w-1/2 px-4">
           <div className="bg-black p-6 rounded-lg mb-6 text-white">
+            <h3 className="text-4xl font-bold uppercase">
+              Aumento
+            </h3>
             <h3 className="text-4xl font-bold mb-2 uppercase">
-              Aumento muscular
+              muscular
             </h3>
             <p className="mb-4 text-xl font-bold">Plan 100% a medida</p>
             <p className="mb-2 text-7xl font-bold">$100</p>
@@ -53,7 +56,7 @@ const PlanSection = () => {
             <p className="mb-4">+ Chau grasa y hola músculos</p>
             <p className="mb-4">+ Chau celulitis y flacidez</p>
             <p className="mb-4">+ Hola abs y tono muscular</p>
-            <p className="mb-4">+ Más autoestima y seguridad</p>
+            {/* <p className="mb-4">+ Más autoestima y seguridad</p> */}
             <h4 className="font-bold mb-2">Qué incluye?</h4>
             <div className="list-disc text-left ml-6 mb-4">
               <p>✅ Guía de entrenamiento a medida + videos</p>
@@ -63,7 +66,10 @@ const PlanSection = () => {
               <p>✅ Atención permanente vía WhatsApp</p>
             </div>
             <p className="font-bold">
-              Precios mensuales recurrentes con tarjeta de crédito/débito
+              Precios mensuales recurrentes con tarjeta
+            </p>
+            <p className="font-bold">
+              de crédito/débito
             </p>
             <Link to="/subscribe">
               <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-4">

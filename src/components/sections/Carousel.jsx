@@ -34,8 +34,8 @@ const Carousel = () => {
   }, [images.length, visibleImages]);
 
   return (
-    <div className="relative w-full bg-blue-500">
-      <h2 className="bg-blue-500 text-black text-2xl font-bold p-4 uppercase">
+    <div className="relative w-full bg-custom-blue">
+      <h2 className="text-black text-2xl font-bold p-4 uppercase">
         transformaciones
       </h2>
       <div
@@ -68,7 +68,7 @@ const Carousel = () => {
         </div>
       </div>
 
-      <ScrollToButton text="Quiero unirme" />
+      <ScrollToButton text="Quiero unirme" className="mb-8 mt-8" />
     </div>
   );
 };

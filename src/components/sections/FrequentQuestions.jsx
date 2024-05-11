@@ -60,7 +60,7 @@ const FrequentQuestions = () => {
   };
 
   return (
-    <div className="flex bg-background justify-center items-center">
+    <div className="flex bg-custom-black justify-center items-center">
       <div className="w-2/3 bg-black bg-opacity-50 p-8">
         <h2 className="text-2xl font-bold text-center text-white mb-8">
           Preguntas frecuentes:
