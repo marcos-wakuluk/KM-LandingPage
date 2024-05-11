@@ -1,24 +1,26 @@
 import React from "react";
-import Discount from './discounts/Discounts'
-import Section1 from './sections/Section1'
-import PlanSection from './sections/PlanSection'
-import Carousel from './sections/Carousel'
-import FrequentQuestions from './sections/FrequentQuestions'
-import Footer from './footer/Footer'
+import Section1 from "./sections/Section1";
+import Carousel from "./sections/Carousel";
+import PlanSection from "./sections/PlanSection";
+import Section3 from "./sections/Section3";
+import FrequentQuestions from "./sections/FrequentQuestions";
+import Section6 from "./sections/Section6";
+import Footer from "./footer/Footer";
+import Discount from "./discounts/Discounts";
 
-function Home() {
+const Home = () => {
   return (
-    <div className="App">
+    <>
       <Discount />
       <Section1 />
       <PlanSection />
       <Carousel />
-      <Section1 />
+      <Section3 />
       <FrequentQuestions />
-      <Section1 />
+      <Section6 />
       <Footer />
-    </div>
+    </>
   );
-}
+};
 
 export default Home;
