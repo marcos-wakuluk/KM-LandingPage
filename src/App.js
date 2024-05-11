@@ -1,7 +1,6 @@
 import React from "react";
 import "./App.css";
 import Footer from "./components/footer/Footer";
-import Header from "./components/header/Header";
 import Discount from "./components/discounts/Discounts";
 import Section1 from "./components/sections/Section1";
 import Carousel from "./components/sections/Carousel";
@@ -13,7 +12,6 @@ import Section6 from "./components/sections/Section6";
 function App() {
   return (
     <div className="App">
-      {/* <Header /> */}
       <Discount />
       <Section1 />
       <PlanSection />

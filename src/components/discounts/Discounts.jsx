@@ -24,7 +24,7 @@ const Discount = () => {
       <h2 className="bg-black text-white text-2xl font-bold p-4">
         Solo por hoy 20% OFF en todos los planes de #KMProFitness
       </h2>
-      <div className="text-center sticky top-0">
+      <div className="text-center sticky top-0 z-10">
         <div className="mx-auto">
           <div className="flex justify-stretch bg-blue-500 text-black p-4 items-center">
             <h3 className="flex-grow text-lg font-semibold">Últimos cupos</h3>

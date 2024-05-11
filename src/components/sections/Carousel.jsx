@@ -19,31 +19,19 @@ const Carousel = () => {
     Testimonio5,
     Testimonio6,
     Testimonio7,
-    Testimonio1,
-    Testimonio2,
-    Testimonio3,
-    Testimonio4,
-    Testimonio5,
-    Testimonio6,
-    Testimonio7,
-    Testimonio1,
-    Testimonio2,
-    Testimonio3,
-    Testimonio4,
-    Testimonio5,
-    Testimonio6,
-    Testimonio7,
   ];
   const [startIndex, setStartIndex] = useState(0);
+  const visibleImages = 5;
 
   useEffect(() => {
     const interval = setInterval(() => {
       setStartIndex((prevIndex) =>
-        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+        prevIndex === images.length - visibleImages ? 0 : prevIndex + 1
       );
     }, 1000);
+
     return () => clearInterval(interval);
-  }, []);
+  }, [images.length, visibleImages]);
 
   return (
     <div className="relative w-full bg-blue-500">
@@ -56,24 +44,30 @@ const Carousel = () => {
         data-carousel="slide"
       >
         <div className="flex bg-blue-500">
-          {images.map((image, index) => (
-            <div
-              key={index}
-              className={`${index >= startIndex && index < startIndex + 5
+          {images.map((image, index) => {
+            const actualIndex =
+              (startIndex + index) % images.length;
+            const display =
+              index >= startIndex && index < startIndex + visibleImages
                 ? "flex"
-                : "hidden"
-                } duration-700 ease-in-out`}
-              data-carousel-item
-            >
-              <img
-                src={image}
-                className="block w-full object-cover"
-                alt="algo"
-              />
-            </div>
-          ))}
+                : "hidden";
+            return (
+              <div
+                key={index}
+                className={`${display} duration-700 ease-in-out`}
+                data-carousel-item
+              >
+                <img
+                  src={images[actualIndex]}
+                  className="block w-full object-cover"
+                  alt="algo"
+                />
+              </div>
+            );
+          })}
         </div>
       </div>
+
       <ScrollToButton text="Quiero unirme" />
     </div>
   );
