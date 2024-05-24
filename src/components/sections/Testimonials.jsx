@@ -1,42 +1,30 @@
-import React, { useEffect, useState } from "react";
-import {
-  Transformations1,
-  Transformations2,
-  Transformations3,
-  Transformations4,
-  Transformations5,
-  Transformations6,
-  Transformations7,
-} from "../../utils/Images";
+import React, { useEffect, useState, useRef } from "react";
 import ScrollToButton from "./ScrollToButton";
+import { TestimonialImages } from "../../utils/Images";
 
-const Carousel = () => {
-  const images = [
-    Transformations1,
-    Transformations2,
-    Transformations3,
-    Transformations4,
-    Transformations5,
-    Transformations6,
-    Transformations7,
-  ];
+const Testimonials = () => {
   const [startIndex, setStartIndex] = useState(0);
+  const imagesRef = useRef(TestimonialImages);
   const visibleImages = 5;
+
+  useEffect(() => {
+    imagesRef.current = TestimonialImages;
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setStartIndex((prevIndex) =>
-        prevIndex === images.length - visibleImages ? 0 : prevIndex + 1
+        prevIndex === imagesRef.current.length - visibleImages ? 0 : prevIndex + 1
       );
     }, 2000);
 
     return () => clearInterval(interval);
-  }, [images.length, visibleImages]);
+  }, [visibleImages]);
 
   return (
     <div className="relative w-full bg-custom-blue">
       <h2 className="text-white text-2xl font-bold p-4 uppercase">
-        transformaciones
+        ¿Que opina la gente de nuestro servicio?
       </h2>
       <div
         id="default-carousel"
@@ -44,9 +32,9 @@ const Carousel = () => {
         data-carousel="slide"
       >
         <div className="flex bg-blue-500">
-          {images.map((image, index) => {
+          {TestimonialImages.map((image, index) => {
             const actualIndex =
-              (startIndex + index) % images.length;
+              (startIndex + index) % TestimonialImages.length;
             const display =
               index >= startIndex && index < startIndex + visibleImages
                 ? "flex"
@@ -58,9 +46,9 @@ const Carousel = () => {
                 data-carousel-item
               >
                 <img
-                  src={images[actualIndex]}
+                  src={TestimonialImages[actualIndex]}
                   className="block w-full object-cover"
-                  alt="transformation"
+                  alt="testimony"
                 />
               </div>
             );
@@ -73,4 +61,4 @@ const Carousel = () => {
   );
 };
 
-export default Carousel;
+export default Testimonials;

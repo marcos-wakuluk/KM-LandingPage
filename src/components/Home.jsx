@@ -7,6 +7,7 @@ import FrequentQuestions from "./sections/FrequentQuestions";
 import Section6 from "./sections/Section6";
 import Footer from "./footer/Footer";
 import Discount from "./discounts/Discounts";
+import Testimonials from "./sections/Testimonials";
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
       <PlanSection />
       <Carousel />
       <Section3 />
+      <Testimonials />
       <FrequentQuestions />
       <Section6 />
       <Footer />
