@@ -6,7 +6,7 @@ const Testimonials = () => {
   const [startIndex, setStartIndex] = useState(0);
   const imagesRef = useRef(TestimonialImages);
   const visibleImages = 5;
-  const imageWidth = 100 / visibleImages; // Porcentaje de ancho para cada imagen
+  const imageWidth = 100 / visibleImages;
 
   useEffect(() => {
     imagesRef.current = TestimonialImages;

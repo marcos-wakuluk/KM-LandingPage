@@ -1,23 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import ScrollToButton from "./ScrollToButton";
 import { TransformationsImages } from "../../utils/Images";
 
 const Transformations = () => {
   const [startIndex, setStartIndex] = useState(0);
+  const imagesRef = useRef(TransformationsImages);
   const visibleImages = 5;
-  const imageWidth = 100 / visibleImages; // Porcentaje de ancho para cada imagen
+  const imageWidth = 100 / visibleImages;
+
+  useEffect(() => {
+    imagesRef.current = TransformationsImages;
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setStartIndex((prevIndex) =>
-        prevIndex === TransformationsImages.length - visibleImages
-          ? 0
-          : prevIndex + 1
+        prevIndex === imagesRef.current.length - TransformationsImages ? 0 : prevIndex + 1
       );
-    }, 3000);
+    }, 2000);
 
     return () => clearInterval(interval);
-  }, [TransformationsImages.length, visibleImages]);
+  }, []);
 
   return (
     <div className="relative w-full bg-custom-blue">
