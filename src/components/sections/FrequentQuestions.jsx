@@ -53,10 +53,14 @@ const Questions = [
 ];
 
 const FrequentQuestions = () => {
-  const [openQuestion, setOpenQuestion] = useState(null);
+  const [openQuestions, setOpenQuestions] = useState([]);
 
-  const togglePregunta = (index) => {
-    setOpenQuestion(openQuestion === index ? null : index);
+  const toggleQuestion = (index) => {
+    if (openQuestions.includes(index)) {
+      setOpenQuestions(openQuestions.filter((i) => i !== index));
+    } else {
+      setOpenQuestions([...openQuestions, index]);
+    }
   };
 
   return (
@@ -69,13 +73,15 @@ const FrequentQuestions = () => {
           <table className="w-full">
             <tbody>
               {Questions.map((question, index) => (
-                <tr key={index} className="border-b border-blue-500" onClick={() => togglePregunta(index)}>
+                <tr
+                  key={index}
+                  className="border-b border-blue-500"
+                  onClick={() => toggleQuestion(index)}
+                >
                   <td className="p-4">
-                    <button
-                      className="flex items-center text-white focus:outline-none"
-                    >
+                    <button className="flex items-center text-white focus:outline-none">
                       <span className="mr-2">
-                        {openQuestion === index ? (
+                        {openQuestions.includes(index) ? (
                           <ChevronDoubleUpIcon className="w-5 h-5" />
                         ) : (
                           <ChevronDoubleDownIcon className="w-5 h-5" />
@@ -83,12 +89,13 @@ const FrequentQuestions = () => {
                       </span>
                       {question.question}
                     </button>
-                    <p
-                      className={`mt-2 text-white overflow-hidden ${openQuestion === index ? "max-h-full" : "max-h-0"
-                        }`}
+                    <div
+                      className={`mt-2 text-white transition-max-height duration-700 ease-in-out overflow-hidden ${
+                        openQuestions.includes(index) ? "max-h-96" : "max-h-0"
+                      }`}
                     >
-                      {question.response}
-                    </p>
+                      <p>{question.response}</p>
+                    </div>
                   </td>
                 </tr>
               ))}
