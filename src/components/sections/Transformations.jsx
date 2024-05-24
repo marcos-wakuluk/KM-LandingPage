@@ -1,26 +1,34 @@
 import React, { useEffect, useState, useRef } from "react";
 import ScrollToButton from "./ScrollToButton";
-import { TransformationsImages } from "../../utils/Images";
+import { TransformationsImages } from "../../utils/Constants";
 
 const Transformations = () => {
   const [startIndex, setStartIndex] = useState(0);
-  const imagesRef = useRef(TransformationsImages);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const imagesRef = useRef([
+    ...TransformationsImages,
+    ...TransformationsImages,
+  ]);
   const visibleImages = 5;
   const imageWidth = 100 / visibleImages;
 
   useEffect(() => {
-    imagesRef.current = TransformationsImages;
-  }, []);
-
-  useEffect(() => {
     const interval = setInterval(() => {
-      setStartIndex((prevIndex) =>
-        prevIndex === imagesRef.current.length - TransformationsImages ? 0 : prevIndex + 1
-      );
+      setIsTransitioning(true);
+      setStartIndex((prevIndex) => prevIndex + 1);
     }, 2000);
 
     return () => clearInterval(interval);
   }, []);
+
+  useEffect(() => {
+    if (startIndex === TransformationsImages.length) {
+      setTimeout(() => {
+        setIsTransitioning(false);
+        setStartIndex(0);
+      }, 1000);
+    }
+  }, [startIndex]);
 
   return (
     <div className="relative w-full bg-custom-blue">
@@ -33,13 +41,17 @@ const Transformations = () => {
         data-carousel="slide"
       >
         <div
-          className="flex transition-transform duration-1000 ease-in-out"
+          className={`flex ${
+            isTransitioning
+              ? "transition-transform duration-1000 ease-in-out"
+              : ""
+          }`}
           style={{ transform: `translateX(-${startIndex * imageWidth}%)` }}
         >
-          {TransformationsImages.map((image, index) => (
+          {imagesRef.current.map((image, index) => (
             <div
               key={index}
-              className="flex-shrink-0 w-1/5"
+              className="flex-shrink-0"
               style={{ width: `${imageWidth}%` }}
               data-carousel-item
             >

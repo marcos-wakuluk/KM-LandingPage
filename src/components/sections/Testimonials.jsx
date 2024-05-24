@@ -1,26 +1,35 @@
 import React, { useEffect, useState, useRef } from "react";
 import ScrollToButton from "./ScrollToButton";
-import { TestimonialImages } from "../../utils/Images";
+import { TestimonialImages } from "../../utils/Constants";
 
 const Testimonials = () => {
   const [startIndex, setStartIndex] = useState(0);
-  const imagesRef = useRef(TestimonialImages);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const imagesRef = useRef([...TestimonialImages, ...TestimonialImages]);
   const visibleImages = 5;
   const imageWidth = 100 / visibleImages;
 
   useEffect(() => {
-    imagesRef.current = TestimonialImages;
+    imagesRef.current = [...TestimonialImages, ...TestimonialImages];
   }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setStartIndex((prevIndex) =>
-        prevIndex === imagesRef.current.length - visibleImages ? 0 : prevIndex + 1
-      );
+      setIsTransitioning(true);
+      setStartIndex((prevIndex) => prevIndex + 1);
     }, 2000);
 
     return () => clearInterval(interval);
-  }, [visibleImages]);
+  }, []);
+
+  useEffect(() => {
+    if (startIndex === TestimonialImages.length) {
+      setTimeout(() => {
+        setIsTransitioning(false);
+        setStartIndex(0);
+      }, 1000);
+    }
+  }, [startIndex]);
 
   return (
     <div className="relative w-full bg-custom-blue">
@@ -33,25 +42,27 @@ const Testimonials = () => {
         data-carousel="slide"
       >
         <div
-          className="flex transition-transform duration-1000 ease-in-out"
+          className={`flex ${
+            isTransitioning
+              ? "transition-transform duration-1000 ease-in-out"
+              : ""
+          }`}
           style={{ transform: `translateX(-${startIndex * imageWidth}%)` }}
         >
-          {TestimonialImages.map((image, index) => {
-            return (
-              <div
-                key={index}
-                className="flex-shrink-0 w-full"
-                style={{ width: `${imageWidth}%` }}
-                data-carousel-item
-              >
-                <img
-                  src={image}
-                  className="block w-full object-cover"
-                  alt="testimony"
-                />
-              </div>
-            );
-          })}
+          {imagesRef.current.map((image, index) => (
+            <div
+              key={index}
+              className="flex-shrink-0"
+              style={{ width: `${imageWidth}%` }}
+              data-carousel-item
+            >
+              <img
+                src={image}
+                className="block w-full object-cover"
+                alt="testimony"
+              />
+            </div>
+          ))}
         </div>
       </div>
       <ScrollToButton text="Quiero unirme" className="mb-8 mt-8" />

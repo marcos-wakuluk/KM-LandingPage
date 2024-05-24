@@ -1,5 +1,5 @@
 import React from "react";
-import { lucasBottomless4 } from "../../utils/Images";
+import { lucasBottomless4 } from "../../utils/Constants";
 import ScrollToButton from "./ScrollToButton";
 
 const Section1 = () => {
