@@ -1,37 +1,22 @@
 import React, { useEffect, useState } from "react";
-import {
-  Transformations1,
-  Transformations2,
-  Transformations3,
-  Transformations4,
-  Transformations5,
-  Transformations6,
-  Transformations7,
-} from "../../utils/Images";
 import ScrollToButton from "./ScrollToButton";
+import { TransformationsImages } from "../../utils/Images";
 
-const Carousel = () => {
-  const images = [
-    Transformations1,
-    Transformations2,
-    Transformations3,
-    Transformations4,
-    Transformations5,
-    Transformations6,
-    Transformations7,
-  ];
+const Transformations = () => {
   const [startIndex, setStartIndex] = useState(0);
   const visibleImages = 5;
 
   useEffect(() => {
     const interval = setInterval(() => {
       setStartIndex((prevIndex) =>
-        prevIndex === images.length - visibleImages ? 0 : prevIndex + 1
+        prevIndex === TransformationsImages.length - visibleImages
+          ? 0
+          : prevIndex + 1
       );
     }, 2000);
 
     return () => clearInterval(interval);
-  }, [images.length, visibleImages]);
+  }, [TransformationsImages.length, visibleImages]);
 
   return (
     <div className="relative w-full bg-custom-blue">
@@ -44,9 +29,9 @@ const Carousel = () => {
         data-carousel="slide"
       >
         <div className="flex bg-blue-500">
-          {images.map((image, index) => {
+          {TransformationsImages.map((image, index) => {
             const actualIndex =
-              (startIndex + index) % images.length;
+              (startIndex + index) % TransformationsImages.length;
             const display =
               index >= startIndex && index < startIndex + visibleImages
                 ? "flex"
@@ -58,7 +43,7 @@ const Carousel = () => {
                 data-carousel-item
               >
                 <img
-                  src={images[actualIndex]}
+                  src={TransformationsImages[actualIndex]}
                   className="block w-full object-cover"
                   alt="transformation"
                 />
@@ -73,4 +58,4 @@ const Carousel = () => {
   );
 };
 
-export default Carousel;
+export default Transformations;

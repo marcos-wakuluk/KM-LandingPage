@@ -153,19 +153,20 @@ const Form = () => {
               />
               <label>
                 He leído, entendido y aceptado la{' '}
-                <a
-                  className="text-blue-500"
+                <label
+                  className="text-blue-500 cursor-pointer"
                   onClick={() => setPrivacyModalOpen(true)}
                 >
                   Política de Privacidad{' '}
-                </a>
+                </label>
                 y el{' '}
-                <a
-                  className="text-blue-500"
+                <label
+                  className="text-blue-500 cursor-pointer"
                   onClick={() => setLegalModalOpen(true)}
                 >
                   Aviso Legal
-                </a>
+                </label>
+                .
               </label>
             </div>
           </div>

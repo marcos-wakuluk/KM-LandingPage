@@ -69,11 +69,10 @@ const FrequentQuestions = () => {
           <table className="w-full">
             <tbody>
               {Questions.map((question, index) => (
-                <tr key={index} className="border-b border-blue-500">
+                <tr key={index} className="border-b border-blue-500" onClick={() => togglePregunta(index)}>
                   <td className="p-4">
                     <button
                       className="flex items-center text-white focus:outline-none"
-                      onClick={() => togglePregunta(index)}
                     >
                       <span className="mr-2">
                         {openQuestion === index ? (

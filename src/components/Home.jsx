@@ -1,6 +1,6 @@
 import React from "react";
 import Section1 from "./sections/Section1";
-import Carousel from "./sections/Carousel";
+import Transformations from "./sections/Transformations";
 import PlanSection from "./sections/PlanSection";
 import Section3 from "./sections/Section3";
 import FrequentQuestions from "./sections/FrequentQuestions";
@@ -15,7 +15,7 @@ const Home = () => {
       <Discount />
       <Section1 />
       <PlanSection />
-      <Carousel />
+      <Transformations />
       <Section3 />
       <Testimonials />
       <FrequentQuestions />
