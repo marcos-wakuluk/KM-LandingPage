@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white py-8">
+    <footer className="bg-custom-black text-white py-8">
       <div className="footer-container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-4 sm:gap-y-0">
           <div className="contact-info">
@@ -66,7 +66,7 @@ const Footer = () => {
       </div>
       <div className="copyright mt-8 text-center">
         <p className="text-sm">
-          &copy; 2024 Personal Trainer. Todos los derechos reservados.
+          &copy; KM Pro Fitness © Copyright 2024 - Todos los derechos reservados.
         </p>
         <p className="text-sm">
           <a href="/privacidad" className="text-gray-300 hover:text-white">

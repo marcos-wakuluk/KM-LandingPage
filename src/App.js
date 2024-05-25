@@ -1,26 +1,19 @@
 import React from "react";
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import Form from "./components/Form";
+import Home from "./components/Home";
 import "./App.css";
-import Footer from "./components/footer/Footer";
-import Discount from "./components/discounts/Discounts";
-import Section1 from "./components/sections/Section1";
-import Carousel from "./components/sections/Carousel";
-import PlanSection from "./components/sections/PlanSection";
-import Section3 from "./components/sections/Section3";
-import FrequentQuestions from "./components/sections/FrequentQuestions";
-import Section6 from "./components/sections/Section6";
 
 function App() {
   return (
-    <div className="App">
-      <Discount />
-      <Section1 />
-      <PlanSection />
-      <Carousel />
-      <Section3 />
-      <FrequentQuestions />
-      <Section6 />
-      <Footer />
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/subscribe" element={<Form />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
