@@ -17,6 +17,12 @@ export const theme = {
         letterSpacing: '-0.02em',
         fontWeight: '700',
       }],
+    },
+    width: {
+      '10p': '10%',
+    },
+    maxWidth: {
+      '30p': '30%',
     }
   },
 };
