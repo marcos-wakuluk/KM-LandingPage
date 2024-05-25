@@ -23,7 +23,7 @@ const Section3 = () => {
             resultados siempre.
           </h3>
           <h3>¿Que opina la gente de nuestro servicio?</h3>
-          <ScrollToButton text="Quiero unirme" />
+          <ScrollToButton text="Quiero unirme" className="text-2xl" />
         </div>
         <div className="w-2/3">
           {" "}

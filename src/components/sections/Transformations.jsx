@@ -64,7 +64,7 @@ const Transformations = () => {
           ))}
         </div>
       </div>
-      <ScrollToButton text="Quiero unirme" className="mb-8 mt-8" />
+      <ScrollToButton text="Quiero unirme" className="mb-8 mt-8 text-2xl" />
     </div>
   );
 };
