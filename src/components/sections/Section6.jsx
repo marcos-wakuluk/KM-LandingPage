@@ -8,7 +8,7 @@ const Section6 = () => {
         <h2 className="text-2xl font-bold text-center text-white mb-8">
           ¿Vas a procrastinar otra vez?
         </h2>
-        <ScrollToButton text="Quiero unirme" />
+        <ScrollToButton text="Quiero unirme" className="text-2xl" />
       </div>
     </div>
   );

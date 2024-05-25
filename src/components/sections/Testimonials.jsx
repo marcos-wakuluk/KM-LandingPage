@@ -17,7 +17,7 @@ const Testimonials = () => {
     const interval = setInterval(() => {
       setIsTransitioning(true);
       setStartIndex((prevIndex) => prevIndex + 1);
-    }, 2000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
@@ -38,8 +38,9 @@ const Testimonials = () => {
       </h2>
       <div
         id="default-carousel"
-        className="relative w-full overflow-hidden rounded-lg md:h-96"
+        className="relative w-full overflow-hidden rounded-lg md:h-96 flex justify-center"
         data-carousel="slide"
+        style={{ backgroundColor: "black" }}
       >
         <div
           className={`flex ${
@@ -52,20 +53,23 @@ const Testimonials = () => {
           {imagesRef.current.map((image, index) => (
             <div
               key={index}
-              className="flex-shrink-0"
+              className="flex-shrink-0 h-full"
               style={{ width: `${imageWidth}%` }}
               data-carousel-item
             >
-              <img
-                src={image}
-                className="block w-full object-cover"
-                alt="testimony"
-              />
+              <div className="flex items-center justify-center h-full">
+                <img
+                  src={image}
+                  className="block max-h-full max-w-full object-cover"
+                  alt="testimony"
+                />
+              </div>
             </div>
           ))}
         </div>
       </div>
-      <ScrollToButton text="Quiero unirme" className="mb-8 mt-8" />
+
+      <ScrollToButton text="Quiero unirme" className="mb-8 mt-8 text-2xl" />
     </div>
   );
 };

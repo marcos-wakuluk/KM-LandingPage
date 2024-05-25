@@ -1,78 +1,62 @@
 import React from "react";
+import { KMWhite } from "../../utils/Constants";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebook,
+  faTwitter,
+  faInstagram,
+} from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
   return (
     <footer className="bg-custom-black text-white py-8">
-      <div className="footer-container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-4 sm:gap-y-0">
-          <div className="contact-info">
-            <h3 className="text-lg font-semibold">Contacto</h3>
+      <div className="w-screen footer-container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-4 sm:gap-y-0 items-center justify-center">
+          <div className="contact-info text-center lg:text-left">
+            <h3 className="text-3xl font-semibold capitalize">contacto</h3>
             <p>Dirección: Calle Principal #123, Ciudad, País</p>
-            <p>Teléfono: +123 456 789</p>
+            <a href="https://wa.me/message/EH4X57L5P2LPF1">
+              Teléfono: +54 358 5138791
+            </a>
             <p>Correo electrónico: info@personaltrainer.com</p>
             <div className="social-links mt-4">
               <a
-                href="https://www.facebook.com/personaltrainer"
+                href="https://www.facebook.com/Kmprofitness"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="inline-block"
               >
-                <i className="fab fa-facebook text-xl mr-4"></i>
+                <FontAwesomeIcon icon={faFacebook} className="text-xl mr-4" />
               </a>
               <a
                 href="https://www.twitter.com/personaltrainer"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="inline-block"
               >
-                <i className="fab fa-twitter text-xl mr-4"></i>
+                <FontAwesomeIcon icon={faTwitter} className="text-xl mr-4" />
               </a>
               <a
-                href="https://www.instagram.com/personaltrainer"
+                href="https://www.instagram.com/kmprofitness"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="inline-block"
               >
-                <i className="fab fa-instagram text-xl"></i>
+                <FontAwesomeIcon icon={faInstagram} className="text-xl mr-4" />
               </a>
             </div>
           </div>
-          <div className="additional-links">
-            <h3 className="text-lg font-semibold">Enlaces adicionales</h3>
-            <ul className="mt-4">
-              <li>
-                <a href="/" className="text-gray-300 hover:text-white">
-                  Inicio
-                </a>
-              </li>
-              <li>
-                <a href="/servicios" className="text-gray-300 hover:text-white">
-                  Servicios
-                </a>
-              </li>
-              <li>
-                <a href="/precios" className="text-gray-300 hover:text-white">
-                  Precios
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/testimonios"
-                  className="text-gray-300 hover:text-white"
-                >
-                  Testimonios
-                </a>
-              </li>
-            </ul>
+          <div className="flex flex-col items-center lg:items-center justify-center">
+            <div className="w-1/3">
+              <img src={KMWhite} alt="Logo KM" />
+            </div>
+            <div className="copyright mt-8 text-center">
+              <p className="text-sm">
+                &copy; KM Pro Fitness 2024 - Todos los derechos reservados.
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="copyright mt-8 text-center">
-        <p className="text-sm">
-          &copy; KM Pro Fitness © Copyright 2024 - Todos los derechos reservados.
-        </p>
-        <p className="text-sm">
-          <a href="/privacidad" className="text-gray-300 hover:text-white">
-            Política de privacidad
-          </a>
-        </p>
       </div>
     </footer>
   );

@@ -13,12 +13,8 @@ const PlanSection = () => {
       <div className="flex justify-around">
         <div className="w-1/2 px-4">
           <div className="bg-black p-6 rounded-lg mb-6 text-white">
-            <h3 className="text-4xl font-bold uppercase">
-              Aumento
-            </h3>
-            <h3 className="text-4xl font-bold mb-2 uppercase">
-              muscular
-            </h3>
+            <h3 className="text-4xl font-bold uppercase">Aumento</h3>
+            <h3 className="text-4xl font-bold mb-2 uppercase">muscular</h3>
             <p className="mb-4 text-xl font-bold">Plan 100% a medida</p>
             <p className="mb-2 text-7xl font-bold">$100</p>
             <p className="mb-4 font-bold">USD/mensual*</p>
@@ -38,7 +34,7 @@ const PlanSection = () => {
               Precios mensuales recurrentes con tarjeta de crédito/débito
             </p>
             <Link to="/subscribe">
-              <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-4">
+              <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-4 text-2xl">
                 Quiero empezar
               </button>
             </Link>
@@ -68,11 +64,9 @@ const PlanSection = () => {
             <p className="font-bold">
               Precios mensuales recurrentes con tarjeta
             </p>
-            <p className="font-bold">
-              de crédito/débito
-            </p>
+            <p className="font-bold">de crédito/débito</p>
             <Link to="/subscribe">
-              <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-4">
+              <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-4 text-2xl">
                 Quiero empezar
               </button>
             </Link>
@@ -102,7 +96,7 @@ const PlanSection = () => {
               Precios mensuales recurrentes con tarjeta de crédito/débito
             </p>
             <Link to="/subscribe">
-              <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-4">
+              <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-4 text-2xl">
                 Quiero empezar
               </button>
             </Link>
