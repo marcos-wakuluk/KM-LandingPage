@@ -79,7 +79,7 @@ const Form = () => {
           <div className="flex flex-wrap -mx-2 mb-4 mt-6">
             <div className="w-full md:w-1/2 px-2 mb-4">
               <label htmlFor="name" className="block font-semibold mb-1">
-                Nombre:
+                Nombre::
               </label>
               <input
                 type="text"
