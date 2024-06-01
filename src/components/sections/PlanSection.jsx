@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { lucas2, lucas3 } from "../../utils/Constants";
 
 const PlanSection = () => {
   return (
@@ -10,9 +11,15 @@ const PlanSection = () => {
       <h2 className="text-4xl font-bold text-center mb-8 text-blue-500">
         que más se adapte a tus necesidades
       </h2>
-      <div className="flex justify-around">
-        <div className="w-1/2 px-4">
-          <div className="bg-black p-6 rounded-lg mb-6 text-white">
+      <div className="flex flex-wrap justify-around">
+        <div className="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
+          <div
+            className="p-6 rounded-lg mb-6 text-white bg-image-overlay"
+            style={{
+              backgroundImage: `url(${lucas2})`,
+              backgroundSize: "cover",
+            }}
+          >
             <h3 className="text-4xl font-bold uppercase">Aumento</h3>
             <h3 className="text-4xl font-bold mb-2 uppercase">muscular</h3>
             <p className="mb-4 text-xl font-bold">Plan 100% a medida</p>
@@ -40,8 +47,14 @@ const PlanSection = () => {
             </Link>
           </div>
         </div>
-        <div className="w-2/3 px-4">
-          <div className="bg-black p-6 rounded-lg mb-6 text-white">
+        <div className="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
+          <div
+            className="p-6 rounded-lg mb-6 text-white bg-image-overlay"
+            style={{
+              backgroundImage: `url(${lucas3})`,
+              backgroundSize: "cover",
+            }}
+          >
             <h3 className="text-3xl font-bold mb-2 uppercase">
               Perdida de grasa y recomposición corporal
             </h3>
@@ -72,8 +85,14 @@ const PlanSection = () => {
             </Link>
           </div>
         </div>
-        <div className="w-1/2 px-4">
-          <div className="bg-black p-6 rounded-lg mb-6 text-white">
+        <div className="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
+          <div
+            className="p-6 rounded-lg mb-6 text-white bg-image-overlay"
+            style={{
+              backgroundImage: `url(${lucas2})`,
+              backgroundSize: "cover",
+            }}
+          >
             <h3 className="text-4xl font-bold mb-2 uppercase">
               Deportista de alto nivel
             </h3>

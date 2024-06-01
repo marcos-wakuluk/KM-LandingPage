@@ -6,6 +6,12 @@ export const lucas1 = "/assets/lucas1.jpeg";
 export const lucas2 = "/assets/lucas2.jpeg";
 export const lucas3 = "/assets/lucas3.jpeg";
 export const lucas4 = "/assets/lucas4.jpeg";
+export const lucas5 = "/assets/lucas5.jpeg";
+export const lucas6 = "/assets/lucas6.jpeg";
+export const lucas7 = "/assets/lucas7.jpeg";
+export const lucas8 = "/assets/lucas8.jpeg";
+export const lucas9 = "/assets/lucas9.jpeg";
+export const lucas10 = "/assets/lucas10.jpeg";
 export const lucasBottomless1 = "/assets/lucas1-sin-fondo.jpeg";
 export const lucasBottomless2 = "/assets/lucas2-sin-fondo.jpeg";
 export const lucasBottomless3 = "/assets/lucas3-sin-fondo.jpeg";
@@ -16,7 +22,6 @@ export const TestimonialImages = [
   "/assets/Testimony2.jpeg",
   "/assets/Testimony3.jpeg",
   "/assets/Testimony4.jpeg",
-  "/assets/Testimony5.jpeg",
   "/assets/Testimony6.jpeg",
   "/assets/Testimony7.jpeg",
   "/assets/Testimony8.jpeg",
@@ -25,7 +30,6 @@ export const TestimonialImages = [
   "/assets/Testimony11.jpeg",
   "/assets/Testimony12.jpeg",
   "/assets/Testimony13.jpeg",
-  "/assets/Testimony14.jpeg",
   "/assets/Testimony15.jpeg",
 ];
 

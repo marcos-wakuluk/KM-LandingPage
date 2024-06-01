@@ -36,3 +36,55 @@
     transform: rotate(360deg);
   }
 }
+
+.bg-image-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-image-overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 0;
+}
+
+.bg-image-overlay > * {
+  position: relative;
+  z-index: 1;
+}
+
+.section-container {
+  position: relative;
+}
+
+.content-container {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url('/public/assets/lucas5.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+
+@media (min-width: 768px) {
+  .content-container {
+    background-image: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .desktop-sticky {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .section3-container {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url('/public/assets/lucas6.jpeg');
+    background-size: cover;
+    background-position: center;  }
+}

@@ -6,7 +6,8 @@ const Testimonials = () => {
   const [startIndex, setStartIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const imagesRef = useRef([...TestimonialImages, ...TestimonialImages]);
-  const visibleImages = 5;
+  const isMobile = window.innerWidth <= 768;
+  const visibleImages = isMobile ? 1 : 5;
   const imageWidth = 100 / visibleImages;
 
   useEffect(() => {
@@ -38,12 +39,12 @@ const Testimonials = () => {
       </h2>
       <div
         id="default-carousel"
-        className="relative w-full overflow-hidden rounded-lg md:h-96 flex justify-center"
+        className="relative w-full overflow-hidden"
         data-carousel="slide"
         style={{ backgroundColor: "black" }}
       >
         <div
-          className={`flex ${
+          className={`flex items-center ${
             isTransitioning
               ? "transition-transform duration-1000 ease-in-out"
               : ""

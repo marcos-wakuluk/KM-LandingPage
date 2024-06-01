@@ -9,7 +9,25 @@ const Transformations = () => {
     ...TransformationsImages,
     ...TransformationsImages,
   ]);
-  const visibleImages = 5;
+  const [visibleImages, setVisibleImages] = useState(5);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const screenWidth = window.innerWidth;
+      if (screenWidth < 768) {
+        setVisibleImages(1);
+      } else if (screenWidth < 1024) {
+        setVisibleImages(3);
+      } else {
+        setVisibleImages(5);
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const imageWidth = 100 / visibleImages;
 
   useEffect(() => {
