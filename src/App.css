@@ -63,7 +63,7 @@
 }
 
 .content-container {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/public/assets/lucas5.jpeg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url('/public/assets/lucas5.jpeg');
   background-size: cover;
   background-position: center;
 }
@@ -80,4 +80,11 @@
     top: 0;
     z-index: 10;
   }
+}
+
+@media screen and (max-width: 767px) {
+  .section3-container {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url('/public/assets/lucas6.jpeg');
+    background-size: cover;
+    background-position: center;  }
 }
