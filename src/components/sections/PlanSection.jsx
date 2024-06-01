@@ -11,8 +11,8 @@ const PlanSection = () => {
       <h2 className="text-4xl font-bold text-center mb-8 text-blue-500">
         que más se adapte a tus necesidades
       </h2>
-      <div className="flex justify-around">
-        <div className="w-1/2 px-4">
+      <div className="flex flex-wrap justify-around">
+        <div className="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
           <div
             className="p-6 rounded-lg mb-6 text-white bg-image-overlay"
             style={{
@@ -47,7 +47,7 @@ const PlanSection = () => {
             </Link>
           </div>
         </div>
-        <div className="w-2/3 px-4">
+        <div className="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
           <div
             className="p-6 rounded-lg mb-6 text-white bg-image-overlay"
             style={{
@@ -85,7 +85,7 @@ const PlanSection = () => {
             </Link>
           </div>
         </div>
-        <div className="w-1/2 px-4">
+        <div className="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
           <div
             className="p-6 rounded-lg mb-6 text-white bg-image-overlay"
             style={{
