@@ -49,11 +49,35 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.6); /* Ajusta el color y la opacidad según sea necesario */
+  background-color: rgba(0, 0, 0, 0.6);
   z-index: 0;
 }
 
 .bg-image-overlay > * {
   position: relative;
   z-index: 1;
+}
+
+.section-container {
+  position: relative;
+}
+
+.content-container {
+  background-image: url('/public/assets/lucas5.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+
+@media (min-width: 768px) {
+  .content-container {
+    background-image: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .desktop-sticky {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
 }
