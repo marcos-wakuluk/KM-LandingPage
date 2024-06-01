@@ -1,11 +1,15 @@
 import React from "react";
-import { lucasBottomless1 } from "../../utils/Constants";
+import { lucas6 } from "../../utils/Constants";
 import ScrollToButton from "./ScrollToButton";
 
 const Section3 = () => {
   return (
     <>
       <div className="flex bg-custom-black">
+        <div className="w-2/3">
+          {" "}
+          <img className="w-2/3" src={lucas6} alt="Logo" />
+        </div>
         <div className="w-1/2 text-white py-4 px-8">
           <h2 className="text-3xl font-bold mb-2 uppercase">
             ¿te falta organización en tu vida fit? Sentis que perder tiempo que
@@ -24,10 +28,6 @@ const Section3 = () => {
           </h3>
           <h3>¿Que opina la gente de nuestro servicio?</h3>
           <ScrollToButton text="Quiero unirme" className="text-2xl" />
-        </div>
-        <div className="w-2/3">
-          {" "}
-          <img src={lucasBottomless1} alt="Logo" />
         </div>
       </div>
     </>
