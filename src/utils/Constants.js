@@ -22,7 +22,6 @@ export const TestimonialImages = [
   "/assets/Testimony2.jpeg",
   "/assets/Testimony3.jpeg",
   "/assets/Testimony4.jpeg",
-  "/assets/Testimony5.jpeg",
   "/assets/Testimony6.jpeg",
   "/assets/Testimony7.jpeg",
   "/assets/Testimony8.jpeg",
@@ -31,7 +30,6 @@ export const TestimonialImages = [
   "/assets/Testimony11.jpeg",
   "/assets/Testimony12.jpeg",
   "/assets/Testimony13.jpeg",
-  "/assets/Testimony14.jpeg",
   "/assets/Testimony15.jpeg",
 ];
 
