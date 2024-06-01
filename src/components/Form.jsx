@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PrivacyPolicy from "./sections/PrivacyPolicy";
 import Legal from "./Legal";
 import { Countries } from "../utils/Constants";
+import { initMercadoPago, Wallet } from "@mercadopago/sdk-react";
 
 const initialState = {
   name: "",
@@ -17,6 +18,12 @@ const Form = () => {
   const [formData, setFormData] = useState(initialState);
   const [privacyModalOpen, setPrivacyModalOpen] = useState(false);
   const [legalModalOpen, setLegalModalOpen] = useState(false);
+
+  useEffect(() => {
+    initMercadoPago("TEST-f12eaf28-149e-4e77-8664-6bb2783ff29c", {
+      locale: "es-AR",
+    });
+  }, []);
 
   const handleClosePrivacyModal = () => {
     setPrivacyModalOpen(false);
@@ -78,34 +85,6 @@ const Form = () => {
         <form onSubmit={handleSubmit}>
           <div className="flex flex-wrap -mx-2 mb-4 mt-6">
             <div className="w-full md:w-1/2 px-2 mb-4">
-              <label htmlFor="name" className="block font-semibold mb-1">
-                Nombre:
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
-                required
-              />
-            </div>
-            <div className="w-full md:w-1/2 px-2 mb-4">
-              <label htmlFor="lastName" className="block font-semibold mb-1">
-                Apellido:
-              </label>
-              <input
-                type="text"
-                id="lastName"
-                name="lastName"
-                value={formData.lastName}
-                onChange={handleChange}
-                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
-                required
-              />
-            </div>
-            <div className="w-full md:w-1/2 px-2 mb-4">
               <label htmlFor="email" className="block font-semibold mb-1">
                 Email:
               </label>
@@ -153,20 +132,6 @@ const Form = () => {
                 ))}
               </select>
             </div>
-            <div className="w-full md:w-1/2 px-2 mb-4">
-              <label htmlFor="region" className="block font-semibold mb-1">
-                Región:
-              </label>
-              <input
-                type="text"
-                id="region"
-                name="region"
-                value={formData.region}
-                onChange={handleChange}
-                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
-                required
-              />
-            </div>
             <div className="w-full px-2 mb-4">
               <input
                 type="checkbox"
@@ -203,6 +168,7 @@ const Form = () => {
             Enviar
           </button>
         </form>
+        <Wallet initialization={{ preferenceId: "<PREFERENCE_ID>" }} />
 
         {privacyModalOpen && (
           <PrivacyPolicy onClose={handleClosePrivacyModal} />
