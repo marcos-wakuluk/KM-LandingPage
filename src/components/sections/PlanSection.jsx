@@ -65,7 +65,6 @@ const PlanSection = () => {
             <p className="mb-4">+ Chau grasa y hola músculos</p>
             <p className="mb-4">+ Chau celulitis y flacidez</p>
             <p className="mb-4">+ Hola abs y tono muscular</p>
-            {/* <p className="mb-4">+ Más autoestima y seguridad</p> */}
             <h4 className="font-bold mb-2">Qué incluye?</h4>
             <div className="list-disc text-left ml-6 mb-4">
               <p>✅ Guía de entrenamiento a medida + videos</p>
@@ -94,7 +93,8 @@ const PlanSection = () => {
             }}
           >
             <h3 className="text-4xl font-bold mb-2 uppercase">
-              Deportista de alto nivel
+              Deportista de <br />
+              alto nivel
             </h3>
             <p className="mb-4 text-xl font-bold">Plan 100% a medida</p>
             <p className="mb-2 text-7xl font-bold">$500</p>
