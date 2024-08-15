@@ -30,7 +30,7 @@ const Section1 = () => {
             <span>mejora tu rendimiento reportivo</span>
           </li>
         </ul>
-        <h3 className="text-3xl font-semibold mb-4 text-justify animate-blink">
+        <h3 className="text-3xl mb-4 text-justify animate-blink font-thin">
           Nuestra mision es guiarte paso a paso en tu proceso y brindarte todas
           las heramientas y secretos para que peudas transformarte en tumejor
           version en tiempo record.
