@@ -9,6 +9,7 @@ import Section6 from "./sections/Section6";
 import Footer from "./footer/Footer";
 import Discount from "./discounts/Discounts";
 import Testimonials from "./sections/Testimonials";
+import Section7 from "./sections/Section7";
 
 const Home = () => {
   return (
@@ -22,6 +23,7 @@ const Home = () => {
       <Section4 />
       <FrequentQuestions />
       <Section6 />
+      <Section7 />
       <Footer />
     </>
   );

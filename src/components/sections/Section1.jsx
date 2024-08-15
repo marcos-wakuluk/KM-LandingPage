@@ -1,26 +1,48 @@
 import React from "react";
 import { lucas5 } from "../../utils/Constants";
 import ScrollToButton from "./ScrollToButton";
+import { CheckCircleIcon } from "@heroicons/react/24/solid";
 
 const Section1 = () => {
   return (
     <div className="section-container flex flex-col md:flex-row bg-custom-black">
       <div className="content-container md:w-1/2 w-full text-white py-4 px-8 relative">
         <h2
-          className="bg-red-900 mt-10 mb-10 p-2 uppercase rounded-lg text-2xl"
+          className="bg-red-900 mt-10 mb-4 p-2 uppercase rounded-lg text-2xl"
           style={{ boxShadow: "10px 10px 20px rgb(127 29 29)" }}
         >
-          PIERDE GRASA, GANA MÚSCULOS O MEJORA TU RENDIMIENTO DEPORTIVO. LOGRA
-          UNAUTOESTIMA INDESTRUCTIBLE
+          cambia tus habitos tu mente y cuerpo
         </h2>
-        <h3 className="text-4xl font-semibold mb-10">
-          El paso a paso definitivo para lograr los resultados que siempre
-          soñaste.
+        <h3 className="text-3xl font-semibold mb-4">
+          Conviertete en la persona que siempre soñaste.
         </h3>
-        <h3 className="text-4xl font-semibold mb-10">
-          No es una aplicación mas, no es cualquier asesoría, somos las personas
-          que vamos a cambiar tu vida por completo como ya lo hicimos con mas de
-          4000 mil personas de todo el mundo.
+        <ul className="space-y-6 mb-4">
+          <li className="text-2xl flex items-center">
+            <CheckCircleIcon className="h-6 w-6 text-green-500 mr-4" />
+            <span>Perde grasa</span>
+          </li>
+          <li className="text-2xl flex items-center">
+            <CheckCircleIcon className="h-6 w-6 text-green-500 mr-4" />
+            <span>gana musculo</span>
+          </li>
+          <li className="text-2xl flex items-center">
+            <CheckCircleIcon className="h-6 w-6 text-green-500 mr-4" />
+            <span>mejora tu rendimiento reportivo</span>
+          </li>
+        </ul>
+        <h3 className="text-3xl mb-4 text-justify animate-blink font-thin">
+          Nuestra mision es guiarte paso a paso en tu proceso y brindarte todas
+          las heramientas y secretos para que peudas transformarte en tumejor
+          version en tiempo record.
+        </h3>
+        <h3 className="text-2xl font-semibold mb-2 text-justify animate-fade">
+          App movil exclusiva, plan 100% a medida, soporte diario, comunidad
+          fitness privada.
+        </h3>
+        <h3 className="text-3xl font-semibold mb-10 animate-pulse">
+          No es cualquier menbresia, somos las personasy el entorno que va a
+          cambiar ti vida por completo como ya lo hicimos con mas de 2000
+          personas por el mundo.
         </h3>
 
         <ScrollToButton

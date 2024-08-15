@@ -13,19 +13,12 @@ const Section4 = () => {
             tiempo
           </h2>
           <h3 className="text-2xl font-semibold mb-4 mt-20">
-            Beneficios adicionales Programa integral, no va a faltarte nada APP
-            móvil exclusiva Experiencia única desde tu teléfono celular, donde
-            tendrás acceso tanto a tus entrenamientos como a tu plan de comidas
-            personalizado. Desde tu app tendrás un registro fotográfico de tus
-            progresos además un registro de medidas corporales. También podrás
-            encontrar contenido extra como “como lograr mi objetivo de cero a
-            100” ”lsta de compras saludables” Vamos a renovar tu plan completo
-            de manera mensual, ajustándolo acorde a tu progreso. ATENCIÓN!
-            Cuando te anotes, necesitamos que completes todos tus datos. Peso,
-            altura, preferencias de comida, si entrenas en gym o casa y que
-            subas fotos actuales. Con esto vamos a poder armarte un plan
-            perfectamente a medida. El cual tardamos aproximadamente 48hs en
-            realizarlo
+            Nuestra asesoria/membresia funciona como una subscrcion mensual, una
+            vez dentro, recibiras un plan de entrenamiento y alimentacion 100%
+            medida que se akustara mes ame ssegun tus progresos y nuestras
+            consideraciones. contaras tambien con apoyo diario en un grupo
+            activo, exclusivo para miembros y mi wsp peseonal para cuando lo
+            necesites.
           </h3>
           <ScrollToButton
             text="Quiero unirme"

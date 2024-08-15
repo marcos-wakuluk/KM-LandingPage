@@ -41,7 +41,7 @@ export const TransformationsImages = [
   "/assets/trasnformation5.jpeg",
   "/assets/trasnformation6.jpeg",
   "/assets/trasnformation7.jpeg",
-]
+];
 
 export const Questions = [
   {
@@ -88,6 +88,18 @@ export const Questions = [
     question: "¿Como se realizan los chequeos mensuales?",
     response:
       "Dentro de la app kmpro vas a encontrar un apartado en donde podrás dejaros tus medidas, peso e imágenes corporales. Estos datos van a conservarse y veremos a largo plazo tus progresos. También te dejaremos una devolución y aconsejaremos.",
+  },
+  {
+    question: "¿Trabajan con un nutricionista?",
+    response: "cambiar respuesta",
+  },
+  {
+    question: "¿Que pasa si no tengo las maquinas que aaprecen en mi rutina?",
+    response: "cambiar respuesta",
+  },
+  {
+    question: "¿Son planificaciones personalizadas?",
+    response: "cambiar respuesta",
   },
 ];
 
