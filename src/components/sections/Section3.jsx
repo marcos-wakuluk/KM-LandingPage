@@ -9,12 +9,12 @@ const Section3 = () => {
         <img src={lucas6} alt="Logo" className="w-full h-auto object-cover" />
       </div>
       <div className="w-full md:w-2/3 text-white py-4 px-8 section3-container">
-        <h2 className="text-4xl font-bold mb-2 uppercase mt-40">
+        <h2 className="text-4xl font-bold mb-2 uppercase mt-40 md:text-left">
           ¿Te falta organización en tu vida fit? ¿Sientes que pierdes tiempo y
           no progresas lo suficiente? ¿Te sientes solo, desmotivado y que
           malgastas tu dinero?
         </h2>
-        <h3 className="text-4xl font-semibold mb-4 mt-20 whitespace-pre-line">
+        <h3 className="text-3xl font-semibold mb-4 mt-20 whitespace-pre-line text-justify md:text-left">
           Sabemos exactamente por lo que estás pasando. También estuvimos en tu
           lugar y por ello creamos este asesoramiento online, para hacerte mucho
           más fácil el proceso, para que logres resultados a corto, mediano y

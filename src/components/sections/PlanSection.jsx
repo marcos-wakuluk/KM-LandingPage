@@ -35,7 +35,7 @@ const PlanSection = () => {
               <p>✅ Guía de alimentación personalizada</p>
               <p>✅ Chequeos cada 30 días</p>
               <p>✅ Acompañamiento y motivación</p>
-              <p>✅ Atención permanente vía WhatsApp</p>
+              <p>✅ Atención personal vía WhatsApp</p>
             </ul>
             <p className="font-bold">
               Precios mensuales recurrentes con tarjeta de crédito/débito
@@ -64,14 +64,14 @@ const PlanSection = () => {
 
             <p className="mb-4">+ Chau grasa y hola músculos</p>
             <p className="mb-4">+ Chau celulitis y flacidez</p>
-            <p className="mb-4">+ Hola abs y tono muscular</p>
+            <p className="mb-4">+ Mas seguridad y autoestima</p>
             <h4 className="font-bold mb-2">Qué incluye?</h4>
             <div className="list-disc text-left ml-6 mb-4">
               <p>✅ Guía de entrenamiento a medida + videos</p>
               <p>✅ Guía de alimentación personalizada</p>
               <p>✅ Chequeos cada 30 días</p>
               <p>✅ Acompañamiento y motivación</p>
-              <p>✅ Atención permanente vía WhatsApp</p>
+              <p>✅ Atención personal vía WhatsApp</p>
             </div>
             <p className="font-bold">
               Precios mensuales recurrentes con tarjeta
@@ -109,7 +109,7 @@ const PlanSection = () => {
               <p>✅ Guía de alimentación personalizada</p>
               <p>✅ Chequeos cada 30 días</p>
               <p>✅ Acompañamiento y motivación</p>
-              <p>✅ Atención permanente vía WhatsApp</p>
+              <p>✅ Atención personal vía WhatsApp</p>
             </div>
             <p className="font-bold">
               Precios mensuales recurrentes con tarjeta de crédito/débito
