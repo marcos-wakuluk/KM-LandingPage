@@ -14,34 +14,34 @@ const Section1 = () => {
           cambia tus habitos tu mente y cuerpo
         </h2>
         <h3 className="text-3xl font-semibold mb-4">
-          Conviertete en la persona que siempre soñaste.
+          Conviértete en la persona que siempre soñaste.
         </h3>
         <ul className="space-y-6 mb-4">
           <li className="text-2xl flex items-center">
             <CheckCircleIcon className="h-6 w-6 text-green-500 mr-4" />
-            <span>Perde grasa</span>
+            <span>Perdé grasa</span>
           </li>
           <li className="text-2xl flex items-center">
             <CheckCircleIcon className="h-6 w-6 text-green-500 mr-4" />
-            <span>gana musculo</span>
+            <span>Ganá musculo</span>
           </li>
           <li className="text-2xl flex items-center">
             <CheckCircleIcon className="h-6 w-6 text-green-500 mr-4" />
-            <span>mejora tu rendimiento reportivo</span>
+            <span>Mejorá tu rendimiento deportivo</span>
           </li>
         </ul>
-        <h3 className="text-3xl mb-4 text-justify animate-blink font-thin">
-          Nuestra mision es guiarte paso a paso en tu proceso y brindarte todas
+        <h3 className="text-3xl mb-4 text-justify font-thin">
+          Nuestra misión es guiarte paso a paso en tu proceso y brindarte todas
           las heramientas y secretos para que peudas transformarte en tumejor
-          version en tiempo record.
+          versión en tiempo record.
         </h3>
-        <h3 className="text-2xl font-semibold mb-2 text-justify animate-fade">
+        <h3 className="text-2xl font-semibold mb-2 text-justify animate-pulse">
           App movil exclusiva, plan 100% a medida, soporte diario, comunidad
           fitness privada.
         </h3>
-        <h3 className="text-3xl font-semibold mb-10 animate-pulse">
-          No es cualquier menbresia, somos las personasy el entorno que va a
-          cambiar ti vida por completo como ya lo hicimos con mas de 2000
+        <h3 className="text-3xl font-semibold mb-10">
+          No es cualquier menbresia, somos las personas y el entorno que va a
+          cambiar tu vida por completo como ya lo hicimos con mas de 2000
           personas por el mundo.
         </h3>
 

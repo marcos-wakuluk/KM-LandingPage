@@ -6,7 +6,7 @@ const PlanSection = () => {
   return (
     <div className="py-8 bg-custom-black" id="planSection">
       <h2 className="text-4xl font-bold text-white text-center">
-        Selecciona el plan
+        Seleccioná el plan
       </h2>
       <h2 className="text-4xl font-bold text-center mb-8 text-blue-500">
         que más se adapte a tus necesidades
@@ -29,7 +29,7 @@ const PlanSection = () => {
             <p className="mb-4">+ Más músculos y menos grasa</p>
             <p className="mb-4">+ Más autoestima y presencia</p>
             <p className="mb-4">+ Mejor calce y estética</p>
-            <h4 className="font-bold mb-2">Qué incluye?</h4>
+            <h4 className="font-bold mb-2">¿Qué incluye?</h4>
             <ul className="list-disc text-left ml-6 mb-4">
               <p>✅ Guía de entrenamiento a medida + videos</p>
               <p>✅ Guía de alimentación personalizada</p>
@@ -62,10 +62,10 @@ const PlanSection = () => {
             <p className="mb-2 text-7xl font-bold">$30</p>
             <p className="mb-4 font-bold">USD/mensual*</p>
 
-            <p className="mb-4">+ Chau grasa y hola músculos</p>
+            <p className="mb-4">+ Chau grasa, hola músculos</p>
             <p className="mb-4">+ Chau celulitis y flacidez</p>
-            <p className="mb-4">+ Mas seguridad y autoestima</p>
-            <h4 className="font-bold mb-2">Qué incluye?</h4>
+            <p className="mb-4">+ Más seguridad y autoestima</p>
+            <h4 className="font-bold mb-2">¿Qué incluye?</h4>
             <div className="list-disc text-left ml-6 mb-4">
               <p>✅ Guía de entrenamiento a medida + videos</p>
               <p>✅ Guía de alimentación personalizada</p>
@@ -74,9 +74,8 @@ const PlanSection = () => {
               <p>✅ Atención personal vía WhatsApp</p>
             </div>
             <p className="font-bold">
-              Precios mensuales recurrentes con tarjeta
+              Precios mensuales recurrentes con tarjeta de crédito/débito
             </p>
-            <p className="font-bold">de crédito/débito</p>
             <Link to="/subscribe">
               <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-4 text-2xl">
                 Quiero empezar
@@ -101,9 +100,9 @@ const PlanSection = () => {
             <p className="mb-4 font-bold">USD/mensual*</p>
 
             <p className="mb-4">+ Mayor rendimiento y competibilidad</p>
-            <p className="mb-4">+ Marca la diferencia con tus adversarios</p>
+            <p className="mb-4">+ Marcá la diferencia con tus adversarios</p>
             <p className="mb-4">+ Evita lesiones y poténciate</p>
-            <h4 className="font-bold mb-2">Qué incluye?</h4>
+            <h4 className="font-bold mb-2">¿Qué incluye?</h4>
             <div className="list-disc text-left ml-6 mb-4">
               <p>✅ Guía de entrenamiento a medida + videos</p>
               <p>✅ Guía de alimentación personalizada</p>
