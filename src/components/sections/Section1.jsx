@@ -32,7 +32,7 @@ const Section1 = () => {
         </ul>
         <h3 className="text-3xl mb-4 text-justify font-thin">
           Nuestra misión es guiarte paso a paso en tu proceso y brindarte todas
-          las heramientas y secretos para que peudas transformarte en tumejor
+          las heramientas y secretos para que puedas transformarte en tumejor
           versión en tiempo record.
         </h3>
         <h3 className="text-2xl font-semibold mb-2 text-justify animate-pulse">
