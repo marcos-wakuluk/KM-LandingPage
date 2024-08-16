@@ -3,7 +3,7 @@ import { CheckCircleIcon } from "@heroicons/react/24/solid";
 const Section6 = () => {
   return (
     <div className="flex bg-custom-black justify-center items-center py-12">
-      <div className="w-full max-w-3xl p-8 rounded-lg bg-custom-gray shadow-lg">
+      <div className="max-w-3xl p-8 rounded-lg bg-custom-gray shadow-lg">
         <h2 className="text-3xl font-bold text-center text-white mb-8">
           Encuentra todo acá:
         </h2>
