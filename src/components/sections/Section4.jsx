@@ -13,11 +13,11 @@ const Section4 = () => {
             tiempo
           </h2>
           <h3 className="text-2xl font-semibold mb-4 mt-20">
-            Nuestra asesoria/membresia funciona como una subscrcion mensual, una
+            Nuestra asesoria/membresia funciona como una subscripción mensual, una
             vez dentro, recibiras un plan de entrenamiento y alimentacion 100%
-            medida que se akustara mes ame ssegun tus progresos y nuestras
-            consideraciones. contaras tambien con apoyo diario en un grupo
-            activo, exclusivo para miembros y mi wsp peseonal para cuando lo
+            medida que se ajustará mes a mes según tus progresos y nuestras
+            consideraciones. Contarás también con apoyo diario en un grupo
+            activo, exclusivo para miembros y mi wsp personal para cuando lo
             necesites.
           </h3>
           <ScrollToButton
