@@ -300,3 +300,9 @@ export const Countries = [
   "Zambia",
   "Zimbabue",
 ];
+
+export const Plans = {
+  "deportista-de-alto-nivel": { title: "Deportista de alto nivel", unit_price: 500, quantity: 1 },
+  "aumento-muscular": { title: "Aumento muscular", unit_price: 100, quantity: 1 },
+  "perdida-de-grasa": { title: "Perdida de grasa y recomposición corporal", unit_price: 30, quantity: 1 },
+};
