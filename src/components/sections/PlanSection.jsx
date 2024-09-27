@@ -34,7 +34,7 @@ const PlanSection = () => {
               <p>✅ Atención personal vía WhatsApp</p>
             </ul>
             <p className="font-bold">Precios mensuales recurrentes con tarjeta de crédito/débito</p>
-            <Link to={`/subscribe/aumento-muscular`}>
+            <Link to={`/subscribe/aumentoMasa`}>
               <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-4 text-2xl">Quiero empezar</button>
             </Link>
           </div>
@@ -64,7 +64,7 @@ const PlanSection = () => {
               <p>✅ Atención personal vía WhatsApp</p>
             </div>
             <p className="font-bold">Precios mensuales recurrentes con tarjeta de crédito/débito</p>
-            <Link to={`/subscribe/perdida-de-grasa`}>
+            <Link to={`/subscribe/perdidaGrasa`}>
               <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-4 text-2xl">Quiero empezar</button>
             </Link>
           </div>
@@ -97,7 +97,7 @@ const PlanSection = () => {
               <p>✅ Atención personal vía WhatsApp</p>
             </div>
             <p className="font-bold">Precios mensuales recurrentes con tarjeta de crédito/débito</p>
-            <Link to={`/subscribe/deportista-de-alto-nivel`}>
+            <Link to={`/subscribe/altoRendimiento`}>
               <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-4 text-2xl">Quiero empezar</button>
             </Link>
           </div>

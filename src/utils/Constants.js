@@ -52,7 +52,7 @@ export const Questions = [
   {
     question: "¿Cómo funciona?",
     response:
-      "Después de realizar el pago y proporcionar tus datos, te brindaremos acceso exclusivo a nuestra aplicación, donde encontrarás una sección llamada Primer Paso. Aquí, tendrás a tu disposición una ficha técnica para completar con tus datos personales. Este paso es crucial, ya que nos permitirá conocer todo lo necesario sobre ti para personalizar tu programa fitness de manera única. Este proceso de recopilación de información tiene una estimación de 4 días hábiles. Una vez que hayamos elaborado cuidadosamente tus planificaciones, podrás visualizarlas directamente en la pantalla principal (Home) de la aplicación desde tu dispositivo móvil. Aquí, encontrarás un enlace directo que te conectará con tu entrenador o nutricionista asignado para resolver cualquier duda que pueda surgir durante tu viaje hacia la salud y la forma física. Nuestra meta es brindarte una experiencia personalizada, eficiente y respaldada por profesionales, asegurándonos de que cada paso que tomes te acerque a tus objetivos de bienestar. ¡Estamos aquí para guiarte en cada paso del camino!",
+      "Después de realizar el pago y proporcionar tus datos, te llegara un email con acceso exclusivo a nuestra aplicación, donde encontrarás una sección llamada Primer Paso. Aquí, tendrás a tu disposición una ficha técnica para completar con tus datos personales. Este paso es crucial, ya que nos permitirá conocer todo lo necesario sobre ti para personalizar tu programa fitness de manera única. Este proceso de recopilación de información tiene una estimación de 4 días hábiles. Una vez que hayamos elaborado cuidadosamente tus planificaciones, podrás visualizarlas directamente en la pantalla principal (Home) de la aplicación desde tu dispositivo móvil. Aquí, encontrarás un enlace directo que te conectará con tu entrenador o nutricionista asignado para resolver cualquier duda que pueda surgir durante tu viaje hacia la salud y la forma física. Nuestra meta es brindarte una experiencia personalizada, eficiente y respaldada por profesionales, asegurándonos de que cada paso que tomes te acerque a tus objetivos de bienestar. ¡Estamos aquí para guiarte en cada paso del camino!",
   },
   {
     question: "¿Cómo recibo mi programa?",
@@ -67,7 +67,7 @@ export const Questions = [
   {
     question: "¿Cómo puedo cancelar mi suscripción?",
     response:
-      " Para cancelar tu suscripción, simplemente envía un correo electrónico con al menos 7 días de antelación a la fecha de cobro. Es importante tener en cuenta que el periodo mínimo de permanencia es de 3 meses, ya que este tiempo es esencial para lograr un progreso significativo. Ten en cuenta que al cancelar, perderás el acceso tanto a la aplicación como a toda la ayuda con nuestros profesionales. Nuestro objetivo es asegurar un compromiso significativo para optimizar tus resultados.",
+      "Para cancelar tu suscripción, simplemente envía un correo electrónico con al menos 7 días de antelación a la fecha de cobro. Es importante tener en cuenta que el periodo mínimo de permanencia es de 3 meses, ya que este tiempo es esencial para lograr un progreso significativo. Ten en cuenta que al cancelar, perderás el acceso tanto a la aplicación como a toda la ayuda con nuestros profesionales. Nuestro objetivo es asegurar un compromiso significativo para optimizar tus resultados.",
   },
   {
     question: "¿Para quién esta creado?",
@@ -75,9 +75,9 @@ export const Questions = [
       "Nuestro enfoque único se adapta a una variedad de audiencias: desde aquellos que dan sus primeros pasos en el mundo del fitness hasta deportistas ávidos que buscan llevar su rendimiento al siguiente nivel. Este programa no tiene límites de género ni restricciones de edad; es para hombres y mujeres de todas las edadesPara aquellos que dan sus primeros pasos, te brindamos una introducción amigable y personalizada al mundo del fitness. Si eres un deportista en busca de mejorar tu rendimiento, nuestras estrategias personalizadas te llevarán a nuevas alturas. Imagina un programa diseñado no solo para obtener resultados, sino para hacerlo de manera sostenible y adaptada a tu estilo de vida. No importa si eres principiante o experimentado, si buscas mejorar tu forma física o alcanzar metas deportivas específicas, nuestro enfoque integral se ajusta a tus necesidades. No esperes más para unirte a nuestra comunidad de transformación. ¡Eleva tu bienestar, desata tu potencial y descubre lo que realmente significa vivir en tu mejor versión! Este programa es para todos, ¡y eso incluye a TI!",
   },
   {
-    question: "Soy nuevo en el gimnasio, ¿Es bueno para principiantes?",
+    question: "¿Necesito experiencia previa en fitness?",
     response:
-      "Si eres nuevo en el gimnasio, ¡llegaste al lugar perfecto! Nuestros entrenamientos están diseñados para adaptarse completamente a ti y a tus objetivos, especialmente si estás dando tus primeros pasos en el mundo del fitness. Te proporcionaremos un programa personalizado que se ajusta a tu nivel de condición física actual. No te preocupes por elegir pesas, te guiaremos para seleccionar las adecuadas y te ayudaremos a aumentar gradualmente la intensidad. Con nosotros, no solo estarás en buenas manos, sino que también maximizarás tu tiempo y evitas gastos innecesarios. ¡Bienvenido a una nueva etapa en tu viaje hacia la salud y la forma física!",
+      "No, el asesoramiento esta diseñado para todos los niveles, desde principantes hasta atletas avanzados. Adaptamos los ejercicios y la nutricion a tu nivel actual y vamos prograsando a tu ritmo",
   },
   {
     question: "¿Funciona el asesoramiento?",
@@ -85,21 +85,28 @@ export const Questions = [
       "Si, Descubre la eficacia de nuestro asesoramiento fitness consultando nuestros perfiles, donde hemos cosechado más de 3000 resultados en estos 7 años de dedicación. Te garantizamos que, al seguir tus planificaciones y aprovechar la experiencia de nuestros profesionales, experimentarás resultados constantes. Confía en nuestro historial de éxito y haz de tu viaje fitness una experiencia transformadora. ¡Los resultados hablan por sí mismos!",
   },
   {
-    question: "¿Cómo se realizan los chequeos mensuales?",
+    question: "¿Cómo se mide mi progreso?",
     response:
-      "Dentro de la app kmpro vas a encontrar un apartado en donde podrás dejaros tus medidas, peso e imágenes corporales. Estos datos van a conservarse y veremos a largo plazo tus progresos. También te dejaremos una devolución y aconsejaremos.",
+      "Dentro de la app kmpro vas a encontrar un apartado en donde podrás dejarnos tus medidas, peso e imágenes corporales. Estos datos van a conservarse y veremos a largo plazo tus progresos. También te dejaremos una devolución y aconsejaremos.",
   },
   {
     question: "¿Trabajan con un nutricionista?",
-    response: "cambiar respuesta",
+    response: "Si, en nuestro equipo contamos con nutricionista, los planes son personalizados",
   },
   {
-    question: "¿Qué pasa si no tengo las maquinas que aaprecen en mi rutina?",
-    response: "cambiar respuesta",
+    question: "¿Qué tipo de equipamiento necesito?",
+    response:
+      "Dependiendo de tus objetivos podemos trabajar con el equipamiento que tengas diponible, sino puedes asistir a un gimnacio, podemos crear un plan para que puedas seguir desde la comodidad de tu casa o al aire libre.",
   },
   {
     question: "¿Son planificaciones personalizadas?",
-    response: "cambiar respuesta",
+    response:
+      "Si, tanto las planificaciones de entrenamiento como las de alimentacion son personalizadas. Se adaptan a tus necesides, objetivos y preferencias, garantizando que se ajusten a tu estilo de vida y te ayuden a alcanzar tus metas de manera efectiva.",
+  },
+  {
+    question: "¿Que sucede si no puedo seguir el programa?",
+    response:
+      "Si tienes dificultades, lo mas importante es comunicarnos. Podemos ajustar tu programa segun tus necesidades, sean por cambios en tu rutina, lesiones o cualquier otra razon.",
   },
 ];
 
@@ -305,4 +312,22 @@ export const Plans = {
   "deportista-de-alto-nivel": { title: "Deportista de alto nivel", unit_price: 500, quantity: 1 },
   "aumento-muscular": { title: "Aumento muscular", unit_price: 100, quantity: 1 },
   "perdida-de-grasa": { title: "Perdida de grasa y recomposición corporal", unit_price: 30, quantity: 1 },
+};
+
+export const planUrls = {
+  aumentoMasa: {
+    1: "https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c93808491eb5ebe0192261073f41299",
+    3: "https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c93808491eb5f5701922613477b12d1",
+    6: "https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c93808491eb5ebe01922617f90b129b",
+  },
+  perdidaGrasa: {
+    1: "https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c93808491eb5f570192261a28da12d6",
+    3: "https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c93808491eb5f1c0192261b3430126a",
+    6: "https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c93808491eb5f570192261c274312d7",
+  },
+  altoRendimiento: {
+    1: "https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c93808491eb5f570192261ee20612d8",
+    3: "https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c93808491eb5f570192261fe94712d9",
+    6: "https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c93808491eb5f1c019226208fab126c",
+  },
 };

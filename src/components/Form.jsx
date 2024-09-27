@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import PrivacyPolicy from "./sections/PrivacyPolicy";
 import Legal from "./Legal";
-import { Countries, Plans } from "../utils/Constants";
-import { initMercadoPago, Wallet } from "@mercadopago/sdk-react";
 import { useParams } from "react-router-dom";
+import { Grid, Stack, TextInput, Checkbox, Button, Modal, Title } from "@mantine/core";
+import PackageSelector from "../PackageSelector";
+import { planUrls } from "../utils/Constants";
 
 const initialState = {
   name: "",
@@ -12,55 +13,44 @@ const initialState = {
   emailConfirm: "",
   country: "Argentina",
   privacyPolicies: false,
+  selectedPlan: "",
+};
+
+const initialErrors = {
+  email: "",
+  emailConfirm: "",
 };
 
 const Form = () => {
   const { planName } = useParams();
-  const selectedPlan = Plans[planName];
   const [formData, setFormData] = useState(initialState);
+  const [errors, setErrors] = useState(initialErrors);
   const [privacyModalOpen, setPrivacyModalOpen] = useState(false);
   const [legalModalOpen, setLegalModalOpen] = useState(false);
-  const [preferenceId, setPreferenceId] = useState(null);
-  const [emailError, setEmailError] = useState("");
-  const [confirmEmailError, setConfirmEmailError] = useState("");
+  const [selectedMonths, setSelectedMonths] = useState(null);
+  const paymentButtonRef = useRef(null);
 
   useEffect(() => {
-    const mercadoPagoKey = process.env.REACT_APP_MERCADOPAGO_PUBLIC_KEY;
-
-    initMercadoPago(mercadoPagoKey, {
-      locale: "es-AR",
-    });
-
-    const fetchPreferenceId = async () => {
-      try {
-        const response = await fetch("http://localhost:3100/create-preference", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ items: [{ title: selectedPlan.title, unit_price: selectedPlan.unit_price, quantity: 1 }] }),
-        });
-
-        const data = await response.json();
-        setPreferenceId(data.data.id);
-      } catch (error) {
-        console.error("Error fetching preferenceId:", error);
-      }
+    const loadMercadoPago = () => {
+      const script = document.createElement("script");
+      script.src = "https://secure.mlstatic.com/mptools/render.js";
+      script.async = true;
+      paymentButtonRef.current.appendChild(script);
     };
 
-    fetchPreferenceId();
-  }, [selectedPlan]);
+    loadMercadoPago();
+  }, []);
 
   const isFormValid = () => {
-    return formData.email && formData.emailConfirm && formData.email === formData.emailConfirm && formData.privacyPolicies && !emailError && !confirmEmailError;
-  };
-
-  const handleClosePrivacyModal = () => {
-    setPrivacyModalOpen(false);
-  };
-
-  const handleCloseLegalModal = () => {
-    setLegalModalOpen(false);
+    return (
+      formData.email &&
+      formData.emailConfirm &&
+      formData.email === formData.emailConfirm &&
+      formData.privacyPolicies &&
+      !errors.email &&
+      !errors.emailConfirm &&
+      selectedMonths
+    );
   };
 
   const handleChange = (e) => {
@@ -72,150 +62,132 @@ const Form = () => {
       [name]: newValue,
     }));
 
-    if (name === "email") {
-      validateEmail(value);
-    }
+    // Lógica de validación
+    validateField(name, newValue);
+  };
 
-    if (name === "emailConfirm") {
-      validateConfirmEmail(value);
+  const validateField = (name, value) => {
+    switch (name) {
+      case "email":
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          email: validateEmail(value) ? "" : "Por favor, introduce un email válido.",
+        }));
+        break;
+      case "emailConfirm":
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          emailConfirm: value === formData.email ? "" : "Los emails no coinciden.",
+        }));
+        break;
+      default:
+        break;
     }
   };
 
-  const validateEmail = (email) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      setEmailError("Por favor, introduce un email válido.");
-    } else {
-      setEmailError("");
-    }
+  const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+  const handlePlanSelect = (plan) => {
+    setSelectedMonths(plan);
+    setFormData((prevData) => ({
+      ...prevData,
+      selectedPlan: plan,
+    }));
   };
 
-  const validateConfirmEmail = (emailConfirm) => {
-    if (emailConfirm !== formData.email) {
-      setConfirmEmailError("Los emails no coinciden.");
-    } else {
-      setConfirmEmailError("");
-    }
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    if (!isFormValid()) {
-      return; // Si el formulario no es válido, no se envía
-    }
-
-    try {
-      const response = await fetch("http://localhost:3100/send-email", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        alert("Email enviado");
-        setFormData(initialState);
+  const handleButtonClick = () => {
+    if (isFormValid()) {
+      const planUrl = planUrls[planName]?.[selectedMonths];
+      if (planUrl) {
+        window.location.href = planUrl;
       } else {
-        alert("Ocurrió un error al enviar el email.");
+        alert("No se ha encontrado un plan válido.");
       }
-    } catch (error) {
-      console.error(error);
     }
   };
-
-  const isPaymentButtonDisabled = !isFormValid();
 
   return (
     <>
-      <div className="bg-black">
-        <img src="/assets/KM-white.png" className="mt-10" style={{ display: "inline", width: "10%" }} alt="" />
+      <div style={{ backgroundColor: "black", padding: "20px" }}>
+        <img src="/assets/KM-white.png" style={{ display: "inline", width: "10%" }} alt="" />
       </div>
-      <div className="bg-black h-12"></div>
-      <div className="w-2/3 mx-auto mt-6 divide-y">
-        <h2 className="text-2xl font-bold mb-4">Detalles de contacto</h2>
-        <form onSubmit={handleSubmit}>
-          <div className="flex flex-wrap -mx-2 mb-4 mt-6">
-            <div className="w-full md:w-1/2 px-2 mb-4">
-              <label htmlFor="email" className="block font-semibold mb-1">
-                Email:
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500 ${emailError ? "border-red-500" : ""}`}
-                required
-              />
-              {emailError && <p className="text-red-500 text-sm">{emailError}</p>} {/* Mensaje de error */}
-            </div>
-            <div className="w-full md:w-1/2 px-2 mb-4">
-              <label htmlFor="emailConfirm" className="block font-semibold mb-1">
-                Confirmar email:
-              </label>
-              <input
-                type="email"
-                id="emailConfirm"
-                name="emailConfirm"
-                value={formData.emailConfirm}
-                onChange={handleChange}
-                className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500 ${confirmEmailError ? "border-red-500" : ""}`}
-                required
-              />
-              {confirmEmailError && <p className="text-red-500 text-sm">{confirmEmailError}</p>} {/* Mensaje de error */}
-            </div>
-            <div className="w-full md:w-1/2 px-2 mb-4">
-              <label htmlFor="country" className="block font-semibold mb-1">
-                País:
-              </label>
-              <select
-                id="country"
-                name="country"
-                value={formData.country}
-                onChange={handleChange}
-                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
-                required
-              >
-                <option value="">Selecciona un país</option>
-                {Countries.map((country, index) => (
-                  <option key={index} value={country}>
-                    {country}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div className="w-full px-2 mb-4">
-              <input
-                type="checkbox"
-                id="privacyPolicies"
-                name="privacyPolicies"
-                checked={formData.privacyPolicies}
-                onChange={handleChange}
-                className="form-checkbox text-blue-500 border-blue-500 rounded-md focus:ring-blue-500 mr-2"
-                required
-              />
-              <label>
-                He leído, entendido y aceptado la{" "}
-                <span className="text-blue-500 cursor-pointer" onClick={() => setPrivacyModalOpen(true)}>
-                  Política de Privacidad{" "}
-                </span>
-                y el{" "}
-                <span className="text-blue-500 cursor-pointer" onClick={() => setLegalModalOpen(true)}>
-                  Aviso Legal
-                </span>
-                .
-              </label>
-            </div>
-          </div>
+      <div style={{ height: "12px", backgroundColor: "black" }}></div>
+
+      <div style={{ width: "80%", margin: "40px auto" }}>
+        <Title order={2} style={{ marginBottom: "20px" }}>
+          Detalles de contacto
+        </Title>
+
+        <form>
+          <Grid>
+            <Grid.Col xs={12} md={6}>
+              <Stack spacing="md">
+                <TextInput
+                  type="email"
+                  id="email"
+                  name="email"
+                  label="Email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  radius="md"
+                  size="md"
+                  error={errors.email}
+                />
+
+                <TextInput
+                  type="email"
+                  id="emailConfirm"
+                  name="emailConfirm"
+                  label="Confirmar email"
+                  value={formData.emailConfirm}
+                  onChange={handleChange}
+                  radius="md"
+                  size="md"
+                  error={errors.emailConfirm}
+                />
+              </Stack>
+            </Grid.Col>
+
+            <Grid.Col xs={12} md={6}>
+              <PackageSelector onSelect={handlePlanSelect} />
+            </Grid.Col>
+          </Grid>
+
+          <Stack spacing="md" mt="md">
+            <Checkbox
+              id="privacyPolicies"
+              name="privacyPolicies"
+              label={
+                <>
+                  He leído, entendido y aceptado la{" "}
+                  <span style={{ color: "blue", cursor: "pointer" }} onClick={() => setPrivacyModalOpen(true)}>
+                    Política de Privacidad
+                  </span>{" "}
+                  y el{" "}
+                  <span style={{ color: "blue", cursor: "pointer" }} onClick={() => setLegalModalOpen(true)}>
+                    Aviso Legal
+                  </span>
+                  .
+                </>
+              }
+              checked={formData.privacyPolicies}
+              onChange={handleChange}
+              required
+            />
+
+            <Button ref={paymentButtonRef} disabled={!isFormValid()} onClick={handleButtonClick}>
+              Suscribirme
+            </Button>
+          </Stack>
         </form>
 
-        {preferenceId && !isPaymentButtonDisabled && <Wallet initialization={{ preferenceId }} customization={{ texts: { valueProp: "smart_option" } }} />}
+        <Modal opened={privacyModalOpen} onClose={() => setPrivacyModalOpen(false)} title="Política de Privacidad">
+          <PrivacyPolicy />
+        </Modal>
 
-        {privacyModalOpen && <PrivacyPolicy onClose={handleClosePrivacyModal} />}
-        {legalModalOpen && <Legal onClose={handleCloseLegalModal} />}
+        <Modal opened={legalModalOpen} onClose={() => setLegalModalOpen(false)} title="Aviso Legal">
+          <Legal />
+        </Modal>
       </div>
     </>
   );
