@@ -30,6 +30,9 @@ export const theme = {
     maxWidth: {
       "30p": "30%",
     },
+    marginLeft: {
+      "7p": "7%",
+    },
     keyframes: {
       blink: {
         "0%, 100%": { opacity: 1 },

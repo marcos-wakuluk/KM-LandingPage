@@ -15,7 +15,7 @@ const Footer = () => {
             <p>Dirección: Calle Principal #123, Ciudad, País</p>
             <a href="https://wa.me/message/EH4X57L5P2LPF1">Teléfono: +54 358 5138791</a>
             <p>Correo electrónico: info@personaltrainer.com</p>
-            <div className="social-links mt-4">
+            <div className="ml-7 lg:ml-0 mt-4">
               <a href="https://www.facebook.com/Kmprofitness" target="_blank" rel="noopener noreferrer" className="inline-block">
                 <FontAwesomeIcon icon={faFacebook} className="text-xl mr-4" />
               </a>
