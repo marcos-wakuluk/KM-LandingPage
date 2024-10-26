@@ -1,12 +1,12 @@
 import React from "react";
-import { lucas6 } from "../../utils/Constants";
+import { lucas4 } from "../../utils/Constants";
 import ScrollToButton from "./ScrollToButton";
 
 const Section3 = () => {
   return (
     <div className="section-container flex flex-col md:flex-row bg-custom-black">
       <div className="image-container w-full md:w-1/3 hidden md:block">
-        <img src={lucas6} alt="Logo" className="w-full h-auto object-cover" />
+        <img src={lucas4} alt="Logo" className="w-full h-auto object-cover" />
       </div>
       <div className="w-full md:w-2/3 text-white py-4 px-8 section3-container">
         <h2 className="text-3xl font-bold mb-2 uppercase mt-40 md:text-left">¿Te falta organización en tu vida fit?</h2>
