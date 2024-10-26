@@ -15,7 +15,7 @@ const Section1 = () => {
           cambia tus habitos tu mente y cuerpo
         </h2>
         <h3 className="text-3xl font-semibold mb-4">Conviertete en la persona que siempre soñaste.</h3>
-        <div className="flex justify-start mb-4">
+        <div className="flex justify-center items-center mb-4">
           <ul className="space-y-6">
             <li className="text-2xl flex items-center">
               <CheckCircleIcon className="h-6 w-6 text-green-500 mr-4" />
