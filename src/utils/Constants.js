@@ -1,4 +1,6 @@
 export const KMWhite = "/assets/KM-white.jpeg";
+export const KMBlack = "/assets/KM-color-black-background.jpg";
+export const KMBlack2 = "/assets/KM-color-black-background2.png";
 export const lucas1 = "/assets/lucas1.jpeg";
 export const lucas2 = "/assets/lucas2.jpeg";
 export const lucas3 = "/assets/lucas3.jpeg";

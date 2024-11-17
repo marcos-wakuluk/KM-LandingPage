@@ -1,14 +1,10 @@
 import React, { useEffect, useState, useRef } from "react";
-import ScrollToButton from "./ScrollToButton";
 import { TransformationsImages } from "../../utils/Constants";
 
 const Transformations = () => {
   const [startIndex, setStartIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const imagesRef = useRef([
-    ...TransformationsImages,
-    ...TransformationsImages,
-  ]);
+  const imagesRef = useRef([...TransformationsImages, ...TransformationsImages]);
   const [visibleImages, setVisibleImages] = useState(5);
 
   useEffect(() => {
@@ -50,39 +46,19 @@ const Transformations = () => {
 
   return (
     <div className="relative w-full bg-custom-blue">
-      <h2 className="text-white text-2xl font-bold p-4 uppercase">
-        transformaciones
-      </h2>
-      <div
-        id="default-carousel"
-        className="relative w-full overflow-hidden rounded-lg md:h-96"
-        data-carousel="slide"
-      >
+      <h2 className="text-white text-2xl font-bold p-4 uppercase">transformaciones</h2>
+      <div id="default-carousel" className="relative w-full overflow-hidden rounded-lg md:h-96" data-carousel="slide">
         <div
-          className={`flex ${
-            isTransitioning
-              ? "transition-transform duration-1000 ease-in-out"
-              : ""
-          }`}
+          className={`flex ${isTransitioning ? "transition-transform duration-1000 ease-in-out" : ""}`}
           style={{ transform: `translateX(-${startIndex * imageWidth}%)` }}
         >
           {imagesRef.current.map((image, index) => (
-            <div
-              key={index}
-              className="flex-shrink-0"
-              style={{ width: `${imageWidth}%` }}
-              data-carousel-item
-            >
-              <img
-                src={image}
-                className="block w-full object-cover"
-                alt="transformation"
-              />
+            <div key={index} className="flex-shrink-0" style={{ width: `${imageWidth}%` }} data-carousel-item>
+              <img src={image} className="block w-full object-cover" alt="transformation" />
             </div>
           ))}
         </div>
       </div>
-      <ScrollToButton text="Quiero unirme" className="mb-8 mt-8 text-2xl" />
     </div>
   );
 };
