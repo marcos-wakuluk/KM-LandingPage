@@ -2,9 +2,9 @@ import React, { useEffect, useRef, useState } from "react";
 import PrivacyPolicy from "./sections/PrivacyPolicy";
 import Legal from "./Legal";
 import { useParams, useNavigate } from "react-router-dom";
-import { Grid, Stack, TextInput, Checkbox, Button, Modal, Title, Paper, Text } from "@mantine/core";
+import { Grid, Stack, TextInput, Checkbox, Button, Modal, Title, Paper, Text, Space } from "@mantine/core";
 import PackageSelector from "../PackageSelector";
-import { planUrls } from "../utils/Constants";
+import { KMWhite, planUrls } from "../utils/Constants";
 
 const initialState = {
   email: "",
@@ -111,20 +111,9 @@ const Form = () => {
         },
         body: JSON.stringify({ email: formData.email }),
       })
-        .then((response) => {
-          if (response.ok) {
-            return response.json();
-          } else {
-            throw new Error("Error al enviar el email.");
-          }
-        })
-        .then((data) => {
-          console.log(data);
-          setShowConfirmation(true);
-        })
-        .catch((error) => {
-          console.error("Error:", error);
-        });
+        .then((response) => (response.ok ? response.json() : Promise.reject()))
+        .then(() => setShowConfirmation(true))
+        .catch(console.error);
     }
   };
 
@@ -151,40 +140,27 @@ const Form = () => {
         },
         body: JSON.stringify({ email }),
       })
-        .then((response) => {
-          if (response.ok) {
-            return response.json();
-          } else {
-            throw new Error("Error al enviar el email.");
-          }
-        })
-        .then((data) => {
-          console.log(data);
+        .then((response) => (response.ok ? response.json() : Promise.reject()))
+        .then(() => {
           setShowConfirmation(true);
           setFormData((prevData) => ({ ...prevData, email }));
         })
-        .catch((error) => {
-          console.error("Error:", error);
-        });
+        .catch(console.error);
     }
   }, []);
 
   return (
     <>
-      <div style={{ backgroundColor: "black", padding: "20px" }}>
-        <img src="/assets/KM-white.png" style={{ display: "inline", width: "10%" }} alt="" />
+      <div className="bg-black py-5 flex justify-center">
+        <img src={KMWhite} className="w-1/5 md:w-1/12" alt="" />
       </div>
-      <div style={{ height: "12px", backgroundColor: "black" }}></div>
 
-      <div style={{ width: "80%", margin: "40px auto" }}>
+      <div className="w-full max-w-screen-xl mx-auto my-10 px-5 sm:px-8 md:px-10 lg:px-16 xl:px-20">
         {!showConfirmation ? (
           <>
-            <Title order={2} style={{ marginBottom: "20px" }}>
-              Detalles de contacto
-            </Title>
             <form>
-              <Grid>
-                <Grid.Col xs={12} md={6}>
+              <Grid justify="center">
+                <Grid.Col span={{ base: 10, sm: 6, lg: 3 }}>
                   <Stack spacing="md">
                     <TextInput
                       type="email"
@@ -212,43 +188,37 @@ const Form = () => {
                       error={errors.emailConfirm}
                     />
                   </Stack>
-                </Grid.Col>
-
-                <Grid.Col xs={12} md={6}>
                   <PackageSelector onSelect={handlePlanSelect} />
+                  <Stack spacing="md" mt="md">
+                    <Checkbox
+                      id="privacyPolicies"
+                      name="privacyPolicies"
+                      label={
+                        <>
+                          He leído, entendido y aceptado la{" "}
+                          <span style={{ color: "blue", cursor: "pointer" }} onClick={() => setPrivacyModalOpen(true)}>
+                            Política de Privacidad
+                          </span>{" "}
+                          y el{" "}
+                          <span style={{ color: "blue", cursor: "pointer" }} onClick={() => setLegalModalOpen(true)}>
+                            Aviso Legal
+                          </span>
+                          .
+                        </>
+                      }
+                      checked={formData.privacyPolicies}
+                      onChange={handleChange}
+                      required
+                    />
+                    <Button className="w-80" ref={paymentButtonRef} disabled={!isFormValid()} onClick={handlePaymentButtonClick}>
+                      Suscribirme
+                    </Button>
+                    <Button disabled={!formData.email} onClick={handleEmailButtonClick}>
+                      Probar Envío de Email
+                    </Button>
+                  </Stack>
                 </Grid.Col>
               </Grid>
-
-              <Stack spacing="md" mt="md">
-                <Checkbox
-                  id="privacyPolicies"
-                  name="privacyPolicies"
-                  label={
-                    <>
-                      He leído, entendido y aceptado la{" "}
-                      <span style={{ color: "blue", cursor: "pointer" }} onClick={() => setPrivacyModalOpen(true)}>
-                        Política de Privacidad
-                      </span>{" "}
-                      y el{" "}
-                      <span style={{ color: "blue", cursor: "pointer" }} onClick={() => setLegalModalOpen(true)}>
-                        Aviso Legal
-                      </span>
-                      .
-                    </>
-                  }
-                  checked={formData.privacyPolicies}
-                  onChange={handleChange}
-                  required
-                />
-
-                <Button ref={paymentButtonRef} disabled={!isFormValid()} onClick={handlePaymentButtonClick}>
-                  Suscribirme
-                </Button>
-
-                <Button disabled={!formData.email} onClick={handleEmailButtonClick}>
-                  Probar Envío de Email
-                </Button>
-              </Stack>
             </form>
           </>
         ) : (
@@ -256,12 +226,7 @@ const Form = () => {
             <Title order={2} color="teal">
               ¡Bienvenido!
             </Title>
-            <Text size="lg">
-              Se ha enviado un email a <strong>{formData.email}</strong>. Por favor, revisa tu bandeja de entrada.
-            </Text>
-            <Button variant="outline" color="teal" onClick={() => navigate("/")} style={{ marginTop: "20px" }}>
-              Regresar
-            </Button>
+            <Text size="lg">Se ha enviado un email a {formData.email}.</Text>
           </Paper>
         )}
 

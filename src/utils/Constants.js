@@ -190,3 +190,9 @@ export const planUrls = {
     6: "https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c93808491eb5f1c019226208fab126c",
   },
 };
+
+export const PlansPrices = {
+  aumentoMasa: { 1: "38000", 3: "84600", 6: "154800" },
+  perdidaGrasa: { 1: "38000", 3: "84600", 6: "154800" },
+  altoRendimiento: { 1: "38000", 3: "84600", 6: "154800" },
+};

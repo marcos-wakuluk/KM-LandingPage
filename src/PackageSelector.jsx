@@ -1,15 +1,16 @@
 import { useState } from "react";
 import { Radio, Group, Stack, Text } from "@mantine/core";
 import classes from "./PackageSelector.module.css";
+import { PlansPrices } from "./utils/Constants";
 
 const data = [
-  { name: "1 Mes", value: "1", description: "Ahorras un 25%." },
-  { name: "3 Meses", value: "3", description: "Ahorras un 25%" },
-  { name: "6 Meses", value: "6", description: "Ahorras un 25%" },
+  { name: `1 Mes $${PlansPrices.aumentoMasa[1]}`, value: "1", description: "" },
+  { name: `3 Meses $${PlansPrices.aumentoMasa[3]}`, value: "3", description: "Ahorras un 25.79%" },
+  { name: `6 Meses $${PlansPrices.aumentoMasa[6]}`, value: "6", description: "Ahorras un 32.11%" },
 ];
 
 const PackageSelector = ({ onSelect }) => {
-  const [value, setValue] = useState(data[0].value);
+  const [value, setValue] = useState("");
 
   const handleValueChange = (newValue) => {
     setValue(newValue);
@@ -17,7 +18,12 @@ const PackageSelector = ({ onSelect }) => {
   };
 
   const cards = data.map((item) => (
-    <Radio.Card className={classes.root} radius="md" value={item.value} key={item.value}>
+    <Radio.Card
+      className={`${classes.root} ${!item.selected ? "border-2 border-gray-300" : "border-2 border-gray-300"}`}
+      radius="md"
+      value={item.value}
+      key={item.value}
+    >
       <Group align="center" className="p-2">
         <Radio.Indicator />
         <div>
@@ -30,7 +36,7 @@ const PackageSelector = ({ onSelect }) => {
 
   return (
     <>
-      <Radio.Group value={value} onChange={handleValueChange} label="Selecciona la cantidad de meses">
+      <Radio.Group value={value} onChange={handleValueChange} label="Selecciona la cantidad de meses" className="mt-5">
         <Stack pt="md" gap="xs">
           {cards}
         </Stack>
