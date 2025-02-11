@@ -33,9 +33,11 @@ const PlanSection = () => {
               <p>✅ Acompañamiento y motivación</p>
               <p>✅ Atención personal vía WhatsApp</p>
             </ul>
-            <p className="font-bold">Precios mensuales recurrentes con tarjeta de crédito/débito</p>
+            <p className="font-bold">* Precios mensuales recurrentes con tarjeta de crédito/débito</p>
             <Link to={`/subscribe/aumentoMasa`}>
-              <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-4 text-2xl">Quiero empezar</button>
+              <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-4 text-2xl">
+                Quiero empezar
+              </button>
             </Link>
           </div>
         </div>
@@ -63,9 +65,11 @@ const PlanSection = () => {
               <p>✅ Acompañamiento y motivación</p>
               <p>✅ Atención personal vía WhatsApp</p>
             </div>
-            <p className="font-bold">Precios mensuales recurrentes con tarjeta de crédito/débito</p>
+            <p className="font-bold">* Precios mensuales recurrentes con tarjeta de crédito/débito</p>
             <Link to={`/subscribe/perdidaGrasa`}>
-              <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-4 text-2xl">Quiero empezar</button>
+              <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-4 text-2xl">
+                Quiero empezar
+              </button>
             </Link>
           </div>
         </div>
@@ -96,13 +100,20 @@ const PlanSection = () => {
               <p>✅ Acompañamiento y motivación</p>
               <p>✅ Atención personal vía WhatsApp</p>
             </div>
-            <p className="font-bold">Precios mensuales recurrentes con tarjeta de crédito/débito</p>
+            <p className="font-bold">* Precios mensuales recurrentes con tarjeta de crédito/débito</p>
             <Link to={`/subscribe/altoRendimiento`}>
-              <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-4 text-2xl">Quiero empezar</button>
+              <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-4 text-2xl">
+                Quiero empezar
+              </button>
             </Link>
           </div>
         </div>
       </div>
+      <h3 className="text-4xl font-bold text-center text-white">
+        Todos los planes incluyen el acceso a la app Fitness en donde encontraras el método PPR que es la forma de
+        brindarte organización y claridad para afrontar tu cambio, haciéndolo al proceso mas didáctico y educativo para
+        poder mantener la constancia y lograr cambios verdaderos.
+      </h3>
     </div>
   );
 };
