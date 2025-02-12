@@ -172,6 +172,70 @@ export const Questions = [
       "El Método PPR (Paso a Paso Real) es una metodologia para estructurar la asesoria y brindarte  organización y claridad para afrontar tu cambio, haciéndolo más didáctico y educativo. De esta manera, podés mantener la constancia y lograr cambios verdaderos.",
   },
   {
+    question: "¿Como esta estructurado el metodo?",
+    response: "",
+    title: [
+      "🔒 FASE 1: Diagnóstico y Arranque (Semana 1)",
+      "🔒 FASE 2: Construcción de Hábitos (Semanas 2 a 4)",
+      "🔒 FASE 3: Evaluación y Ajustes (Semanas 5 a 8)",
+      "Cada fase del método PPR tiene un propósito:",
+    ],
+    items: [
+      {
+        title: "🔒 FASE 1: Diagnóstico y Arranque (Semana 1)",
+        items: [
+          "bienvenida: Explicación del proceso.",
+          "Formulario interactivo para carga de medidas, fotos, objetivos y conocernos.",
+          "Plan de entrenamiento básico para comenzar a moverte.",
+          "Checklist semanal descargable para empezar a implementar nuevos habitos.",
+          "Ejercicio de mentalidad y reflexión (sección con textos motivacionales y espacio para respuestas).",
+        ],
+      },
+      {
+        title: "🔒 FASE 2: Construcción de Hábitos (Semanas 2 a 4)",
+        items: [
+          "guia de entreno para tus objetivos y necesidades.",
+          "Guía descargable para calcular macros. aprende sobre alimentacion y a calcular tus requerimientos ",
+          "Checklist de hábitos diarios para profundizar el cambio.",
+          "Reto de 7 días (para desafiarte a que tomes accion).",
+        ],
+      },
+      {
+        title: "🔒 FASE 3: Evaluación y Ajustes (Semanas 5 a 8)",
+        items: [
+          "Formulario de actualización de medidas.",
+          "Entrenamiento progresivo (más complejo, videos avanzados).",
+          "Guía de comidas libres estratégicas.",
+          "Desafío de 3 días intensivos.",
+        ],
+      },
+      {
+        title: "Cada fase del método PPR tiene un propósito:",
+        items: [
+          "✔️ Fase 1: Adaptarte al cambio sin abrumarte.",
+          "✔️ Fase 2: Optimizar tu alimentación y entrenamiento con ajustes progresivos.",
+          "✔️ Fase 3: Consolidar hábitos que sostendrán tu transformación.",
+          "✔️ Fase 4: Alcanzar tu mejor versión y mantener tus logros a largo plazo.",
+        ],
+      },
+    ],
+  },
+  {
+    question: "¿Que guias incluye la asesoria?",
+    response:
+      "ademas de los planes personalizados de entreno y alimentacion encontraras guias extras que son herramientas para que aprendas, puedas tomar buenas decisiones y conseguir tus objetivos:",
+    onlyItems: [
+      "guia de suplementacion definitiva",
+      "guia de macros inteligentes",
+      "recetario proteico y saludable",
+      "guia de vitaminas e hidratacion",
+      "guia de compras saludables",
+      "guia para comer fuera de casa",
+      "guia de ejercicios (mas de 50 videos)",
+      "desafios estrategicos.",
+    ],
+  },
+  {
     question: "¿Que sucede si no puedo seguir el programa?",
     response:
       "Si tienes dificultades, lo mas importante es comunicarnos. Podemos ajustar tu programa segun tus necesidades, sean por cambios en tu rutina, lesiones o cualquier otra razon.",
@@ -201,3 +265,6 @@ export const PlansPrices = {
   perdidaGrasa: { 1: "38000", 3: "84600", 6: "154800" },
   altoRendimiento: { 1: "38000", 3: "84600", 6: "154800" },
 };
+
+// items: [
+// ]

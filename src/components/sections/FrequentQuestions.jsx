@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-import {
-  ChevronDoubleUpIcon,
-  ChevronDoubleDownIcon,
-} from "@heroicons/react/24/solid";
+import { ChevronDoubleUpIcon, ChevronDoubleDownIcon } from "@heroicons/react/24/solid";
 import { Questions } from "../../utils/Constants";
 
 const FrequentQuestions = () => {
@@ -19,18 +16,12 @@ const FrequentQuestions = () => {
   return (
     <div className="flex bg-custom-black justify-center items-center">
       <div className="w-full md:w-2/3 bg-black bg-opacity-50 p-8">
-        <h2 className="text-2xl font-bold text-center text-white mb-8">
-          Preguntas frecuentes:
-        </h2>
+        <h2 className="text-2xl font-bold text-center text-white mb-8">Preguntas frecuentes:</h2>
         <div className="overflow-hidden border border-blue-500 rounded-lg">
           <table className="w-full">
             <tbody>
               {Questions.map((question, index) => (
-                <tr
-                  key={index}
-                  className="border-b border-blue-500"
-                  onClick={() => toggleQuestion(index)}
-                >
+                <tr key={index} className="border-b border-blue-500" onClick={() => toggleQuestion(index)}>
                   <td className="p-4">
                     <button className="flex items-center text-white focus:outline-none">
                       <span className="mr-2">
@@ -47,7 +38,18 @@ const FrequentQuestions = () => {
                         openQuestions.includes(index) ? "max-h-96" : "max-h-0"
                       }`}
                     >
-                      <p>{question.response}</p>
+                      <p className="mb-2">{question.response}</p>
+                      {question.onlyItems?.map((item, itemIndex) => (
+                        <p key={itemIndex}>- {item}</p>
+                      ))}
+                      {question.items?.map((item, itemIndex) => (
+                        <div key={itemIndex} className="mb-2">
+                          <p>{item.title}</p>
+                          {item.items?.map((subItem, subItemIndex) => (
+                            <p key={subItemIndex}>- {subItem}</p>
+                          ))}
+                        </div>
+                      ))}
                     </div>
                   </td>
                 </tr>
