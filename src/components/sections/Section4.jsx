@@ -50,14 +50,18 @@ const Section4 = () => {
               </h3>
             </li>
           </ul>
-          <h3 className="text-2xl font-semibold mb-4 mt-20 relative" style={{ zIndex: 1 }}>
-            Nuestra asesoria funciona como una membresía, una vez que efectúes el pago, recibirás un mail con acceso a
-            la APP, nuestros números y grupo de WhatsApp. dentro de la app encontraras el método y su primer fase, ahi
-            nos conoceremos a fondo y armaremos un plan de entrenamiento y alimentacion 100% medida que se ajustará a
-            medida que avances en las fases del método, según tus progresos y nuestras consideraciones.
+          <h3 className="text-2xl font-light mb-4 mt-20 relative" style={{ zIndex: 1 }}>
+            Una vez que completes el pago de tu membresía, recibirás un correo con acceso a nuestra APP, junto con nuestros 
+            números de contacto y el enlace a nuestro grupo de WhatsApp.
           </h3>
 
           <h3 className="text-2xl font-semibold mb-4 mt-20 relative" style={{ zIndex: 1 }}>
+            Dentro de la APP encontrarás la primera fase de nuestro método, donde nos conoceremos a fondo y diseñaremos 
+            un plan de entrenamiento y alimentación completamente personalizado. Este plan se ajustará progresivamente 
+            según tus avances y nuestras evaluaciones a medida que avances en las distintas fases del método.
+          </h3>
+
+          <h3 className="text-2xl mb-4 mt-20 relative font-light leading-relaxed animate-pulse" style={{ zIndex: 1 }}>
             Contarás con apoyo diario en una comunidad activa, exclusivo para miembros y nuestro wsp personal para
             cuando necesites.
           </h3>

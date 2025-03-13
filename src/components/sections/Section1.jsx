@@ -34,10 +34,6 @@ const Section1 = () => {
         </h2>
 
         <h3 className="text-3xl font-bold mb-4 text-center">
-          ¡Sumate hoy y descubrí una nueva versión de vos mismo, con el respaldo y la guía que necesitás para lograrlo!
-        </h3>
-
-        <h3 className="text-3xl font-bold mb-4 text-center">
           Nuestra misión es guiarte paso a paso en tu proceso, brindarte todas las herramientas y secretos para que
           puedas transformarte en tu mejor versión en tiempo récord.
         </h3>
