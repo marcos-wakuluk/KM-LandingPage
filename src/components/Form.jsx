@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import PrivacyPolicy from "./sections/PrivacyPolicy";
 import Legal from "./Legal";
-import { useParams, useNavigate } from "react-router-dom";
-import { Grid, Stack, TextInput, Checkbox, Button, Modal, Title, Paper, Text, Space } from "@mantine/core";
+import { useParams } from "react-router-dom";
+import { Grid, Stack, TextInput, Checkbox, Button, Modal, Title, Paper, Text } from "@mantine/core";
 import PackageSelector from "../PackageSelector";
 import { KMWhite, planUrls } from "../utils/Constants";
 
@@ -20,7 +20,6 @@ const initialErrors = {
 
 const Form = () => {
   const { planName } = useParams();
-  const navigate = useNavigate();
   const [formData, setFormData] = useState(initialState);
   const [errors, setErrors] = useState(initialErrors);
   const [privacyModalOpen, setPrivacyModalOpen] = useState(false);
@@ -157,70 +156,73 @@ const Form = () => {
 
       <div className="w-full max-w-screen-xl mx-auto my-10 px-5 sm:px-8 md:px-10 lg:px-16 xl:px-20">
         {!showConfirmation ? (
-          <>
-            <form>
-              <Grid justify="center">
-                <Grid.Col span={{ base: 10, sm: 6, lg: 3 }}>
-                  <Stack spacing="md">
-                    <TextInput
-                      type="email"
-                      id="email"
-                      name="email"
-                      label="Email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      radius="md"
-                      size="md"
-                      error={errors.email}
-                    />
+          <form>
+            <Grid justify="center">
+              <Grid.Col span={{ base: 10, sm: 6, lg: 3 }}>
+                <Stack spacing="md">
+                  <TextInput
+                    type="email"
+                    id="email"
+                    name="email"
+                    label="Email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    radius="md"
+                    size="md"
+                    error={errors.email}
+                  />
 
-                    <TextInput
-                      type="email"
-                      id="emailConfirm"
-                      name="emailConfirm"
-                      label="Confirmar email"
-                      value={formData.emailConfirm}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      radius="md"
-                      size="md"
-                      error={errors.emailConfirm}
-                    />
-                  </Stack>
-                  <PackageSelector onSelect={handlePlanSelect} />
-                  <Stack spacing="md" mt="md">
-                    <Checkbox
-                      id="privacyPolicies"
-                      name="privacyPolicies"
-                      label={
-                        <>
-                          He leído, entendido y aceptado la{" "}
-                          <span style={{ color: "blue", cursor: "pointer" }} onClick={() => setPrivacyModalOpen(true)}>
-                            Política de Privacidad
-                          </span>{" "}
-                          y el{" "}
-                          <span style={{ color: "blue", cursor: "pointer" }} onClick={() => setLegalModalOpen(true)}>
-                            Aviso Legal
-                          </span>
-                          .
-                        </>
-                      }
-                      checked={formData.privacyPolicies}
-                      onChange={handleChange}
-                      required
-                    />
-                    <Button className="w-80" ref={paymentButtonRef} disabled={!isFormValid()} onClick={handlePaymentButtonClick}>
-                      Suscribirme
-                    </Button>
-                    <Button disabled={!formData.email} onClick={handleEmailButtonClick}>
-                      Probar Envío de Email
-                    </Button>
-                  </Stack>
-                </Grid.Col>
-              </Grid>
-            </form>
-          </>
+                  <TextInput
+                    type="email"
+                    id="emailConfirm"
+                    name="emailConfirm"
+                    label="Confirmar email"
+                    value={formData.emailConfirm}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    radius="md"
+                    size="md"
+                    error={errors.emailConfirm}
+                  />
+                </Stack>
+                <PackageSelector onSelect={handlePlanSelect} />
+                <Stack spacing="md" mt="md">
+                  <Checkbox
+                    id="privacyPolicies"
+                    name="privacyPolicies"
+                    label={
+                      <>
+                        He leído, entendido y aceptado la{" "}
+                        <span style={{ color: "blue", cursor: "pointer" }} onClick={() => setPrivacyModalOpen(true)}>
+                          Política de Privacidad
+                        </span>{" "}
+                        y el{" "}
+                        <span style={{ color: "blue", cursor: "pointer" }} onClick={() => setLegalModalOpen(true)}>
+                          Aviso Legal
+                        </span>
+                        .
+                      </>
+                    }
+                    checked={formData.privacyPolicies}
+                    onChange={handleChange}
+                    required
+                  />
+                  <Button
+                    className="w-80"
+                    ref={paymentButtonRef}
+                    disabled={!isFormValid()}
+                    onClick={handlePaymentButtonClick}
+                  >
+                    Suscribirme
+                  </Button>
+                  <Button disabled={!formData.email} onClick={handleEmailButtonClick}>
+                    Probar Envío de Email
+                  </Button>
+                </Stack>
+              </Grid.Col>
+            </Grid>
+          </form>
         ) : (
           <Paper padding="md" style={{ textAlign: "center", marginTop: "20px" }}>
             <Title order={2} color="teal">
