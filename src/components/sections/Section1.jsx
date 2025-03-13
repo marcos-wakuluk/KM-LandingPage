@@ -38,7 +38,7 @@ const Section1 = () => {
           puedas transformarte en tu mejor versión en tiempo récord.
         </h3>
 
-        <h3 className="text-3xl font-bold mb-4 text-center">
+        <h3 className="text-3xl mb-4 text-center font-light leading-relaxed animate-pulse">
           App móvil exclusiva, planes 100% a medida, método PPR, soporte diario, comunidad fitness privada, guías
           extra..
         </h3>

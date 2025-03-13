@@ -109,7 +109,7 @@ const PlanSection = () => {
           </div>
         </div>
       </div>
-      <h3 className="text-4xl text-center text-white font-light leading-relaxed animate-pulse">
+      <h3 className="text-4xl text-center text-white font-light leading-relaxed animate-pulse p-4">
         Todos los planes incluyen acceso a la app Fitness en donde encontraras el método PPR que es la forma de
         brindarte organización y claridad para afrontar tu cambio, haciéndolo al proceso mas didáctico y educativo para
         poder mantener la constancia y lograr cambios verdaderos.
