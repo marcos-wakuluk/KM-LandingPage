@@ -30,7 +30,7 @@ const Section1 = () => {
 
       <div className="content-container w-full lg:w-1/2 text-white py-8 px-6 md:px-10 relative flex flex-col justify-center h-full z-10">
         <h2 className="bg-red-700 mt-10 mb-6 p-3 uppercase rounded-lg text-3xl text-center shadow-lg">
-          ¡Transformá tus habitos, mente y cuerpo con nuestro metodo PPR!
+          ¡Transformá tus hábitos, mente y cuerpo con nuestro metodo PPR!
         </h2>
 
         <h3 className="text-3xl font-bold mb-4 text-center">
@@ -39,8 +39,7 @@ const Section1 = () => {
         </h3>
 
         <h3 className="text-3xl mb-4 text-center font-light leading-relaxed animate-pulse">
-          App móvil exclusiva, planes 100% a medida, método PPR, soporte diario, comunidad fitness privada, guías
-          extra..
+          App móvil exclusiva, planes 100% a medida, método PPR, soporte diario, comunidad fitness privada, guías extra.
         </h3>
 
         <div className="flex justify-center">

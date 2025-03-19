@@ -61,8 +61,8 @@ const Section4 = () => {
         </h3>
 
         <h3 className="text-2xl mb-4 mt-20 relative font-light leading-relaxed animate-pulse" style={{ zIndex: 1 }}>
-          Contarás con apoyo diario en una comunidad activa, exclusivo para miembros y nuestro wsp personal para cuando
-          necesites.
+          Contarás con apoyo diario en una comunidad activa, exclusivo para miembros y nuestro Whatsapp personal para
+          cuando necesites.
         </h3>
       </div>
       <div className="image-container w-full md:w-1/3 flex items-center justify-center relative">

@@ -89,9 +89,9 @@ const PlanSection = () => {
             <p className="mb-2 text-7xl font-bold">{PlansPrices.altoRendimiento[1]}</p>
             <p className="mb-4 font-bold">USD/mensual*</p>
 
-            <p className="mb-4">+ Mayor rendimiento y competibilidad</p>
+            <p className="mb-4">+ Mayor rendimiento y competitividad</p>
             <p className="mb-4">+ Marcá la diferencia con tus adversarios</p>
-            <p className="mb-4">+ Evita lesiones y poténciate</p>
+            <p className="mb-4">+ Evita lesiones y potanciate</p>
             <h4 className="font-bold mb-2">¿Qué incluye?</h4>
             <div className="list-disc text-left ml-6 mb-4">
               <p>✅ Guía de entrenamiento a medida + videos</p>
@@ -110,7 +110,7 @@ const PlanSection = () => {
         </div>
       </div>
       <h3 className="text-4xl text-center text-white font-light leading-relaxed animate-pulse p-8">
-        Todos los planes incluyen acceso a la app Fitness en donde encontraras el método PPR que es la forma de
+        Todos los planes incluyen acceso a la app Fitness en donde encontrarás el método PPR que es la forma de
         brindarte organización y claridad para afrontar tu cambio, haciéndolo al proceso mas didáctico y educativo para
         poder mantener la constancia y lograr cambios verdaderos.
       </h3>
