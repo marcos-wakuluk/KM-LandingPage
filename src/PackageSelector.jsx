@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 import { Radio, Group, Stack, Text } from "@mantine/core";
 import classes from "./PackageSelector.module.css";
 import { PlansPrices } from "./utils/Constants";
@@ -35,14 +36,15 @@ const PackageSelector = ({ onSelect }) => {
   ));
 
   return (
-    <>
-      <Radio.Group value={value} onChange={handleValueChange} label="Selecciona la cantidad de meses" className="mt-5">
-        <Stack pt="md" gap="xs">
-          {cards}
-        </Stack>
-      </Radio.Group>
-    </>
+    <Radio.Group value={value} onChange={handleValueChange} label="Selecciona la cantidad de meses" className="mt-5">
+      <Stack pt="md" gap="xs">
+        {cards}
+      </Stack>
+    </Radio.Group>
   );
+};
+PackageSelector.propTypes = {
+  onSelect: PropTypes.func.isRequired,
 };
 
 export default PackageSelector;

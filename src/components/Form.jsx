@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import PrivacyPolicy from "./sections/PrivacyPolicy";
 import Legal from "./Legal";
 import { useParams } from "react-router-dom";
-import { Grid, Stack, TextInput, Checkbox, Button, Modal, Title, Paper, Text } from "@mantine/core";
+import { Grid, Stack, TextInput, Checkbox, Button, Modal, Title, Paper, Text, Container } from "@mantine/core";
 import PackageSelector from "../PackageSelector";
 import { KMWhite, planUrls } from "../utils/Constants";
 
@@ -153,93 +153,94 @@ const Form = () => {
       <div className="bg-black py-5 flex justify-center">
         <img src={KMWhite} className="w-1/5 md:w-1/12" alt="" />
       </div>
+      <Container size="sm" className="flex flex-col justify-center">
+        <div className="w-full max-w-screen-xl mx-auto my-10 px-5 sm:px-8 md:px-10 lg:px-16 xl:px-20">
+          {!showConfirmation ? (
+            <form>
+              <Grid justify="center">
+                <Grid.Col span={{ base: 10, sm: 6, lg: 3 }}>
+                  <Stack spacing="md">
+                    <TextInput
+                      type="email"
+                      id="email"
+                      name="email"
+                      label="Email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      radius="md"
+                      size="md"
+                      error={errors.email}
+                    />
 
-      <div className="w-full max-w-screen-xl mx-auto my-10 px-5 sm:px-8 md:px-10 lg:px-16 xl:px-20">
-        {!showConfirmation ? (
-          <form>
-            <Grid justify="center">
-              <Grid.Col span={{ base: 10, sm: 6, lg: 3 }}>
-                <Stack spacing="md">
-                  <TextInput
-                    type="email"
-                    id="email"
-                    name="email"
-                    label="Email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    radius="md"
-                    size="md"
-                    error={errors.email}
-                  />
+                    <TextInput
+                      type="email"
+                      id="emailConfirm"
+                      name="emailConfirm"
+                      label="Confirmar email"
+                      value={formData.emailConfirm}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      radius="md"
+                      size="md"
+                      error={errors.emailConfirm}
+                    />
+                  </Stack>
+                  <PackageSelector onSelect={handlePlanSelect} />
+                  <Stack spacing="md" mt="md">
+                    <Checkbox
+                      id="privacyPolicies"
+                      name="privacyPolicies"
+                      label={
+                        <>
+                          He leído, entendido y aceptado la{" "}
+                          <span style={{ color: "blue", cursor: "pointer" }} onClick={() => setPrivacyModalOpen(true)}>
+                            Política de Privacidad
+                          </span>{" "}
+                          y el{" "}
+                          <span style={{ color: "blue", cursor: "pointer" }} onClick={() => setLegalModalOpen(true)}>
+                            Aviso Legal
+                          </span>
+                          .
+                        </>
+                      }
+                      checked={formData.privacyPolicies}
+                      onChange={handleChange}
+                      required
+                    />
+                    <Button
+                      className="w-80"
+                      ref={paymentButtonRef}
+                      disabled={!isFormValid()}
+                      onClick={handlePaymentButtonClick}
+                    >
+                      Suscribirme
+                    </Button>
+                    <Button disabled={!formData.email} onClick={handleEmailButtonClick}>
+                      Probar Envío de Email
+                    </Button>
+                  </Stack>
+                </Grid.Col>
+              </Grid>
+            </form>
+          ) : (
+            <Paper padding="md" style={{ textAlign: "center", marginTop: "20px" }}>
+              <Title order={2} color="teal">
+                ¡Bienvenido!
+              </Title>
+              <Text size="lg">Se ha enviado un email a {formData.email}.</Text>
+            </Paper>
+          )}
 
-                  <TextInput
-                    type="email"
-                    id="emailConfirm"
-                    name="emailConfirm"
-                    label="Confirmar email"
-                    value={formData.emailConfirm}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    radius="md"
-                    size="md"
-                    error={errors.emailConfirm}
-                  />
-                </Stack>
-                <PackageSelector onSelect={handlePlanSelect} />
-                <Stack spacing="md" mt="md">
-                  <Checkbox
-                    id="privacyPolicies"
-                    name="privacyPolicies"
-                    label={
-                      <>
-                        He leído, entendido y aceptado la{" "}
-                        <span style={{ color: "blue", cursor: "pointer" }} onClick={() => setPrivacyModalOpen(true)}>
-                          Política de Privacidad
-                        </span>{" "}
-                        y el{" "}
-                        <span style={{ color: "blue", cursor: "pointer" }} onClick={() => setLegalModalOpen(true)}>
-                          Aviso Legal
-                        </span>
-                        .
-                      </>
-                    }
-                    checked={formData.privacyPolicies}
-                    onChange={handleChange}
-                    required
-                  />
-                  <Button
-                    className="w-80"
-                    ref={paymentButtonRef}
-                    disabled={!isFormValid()}
-                    onClick={handlePaymentButtonClick}
-                  >
-                    Suscribirme
-                  </Button>
-                  <Button disabled={!formData.email} onClick={handleEmailButtonClick}>
-                    Probar Envío de Email
-                  </Button>
-                </Stack>
-              </Grid.Col>
-            </Grid>
-          </form>
-        ) : (
-          <Paper padding="md" style={{ textAlign: "center", marginTop: "20px" }}>
-            <Title order={2} color="teal">
-              ¡Bienvenido!
-            </Title>
-            <Text size="lg">Se ha enviado un email a {formData.email}.</Text>
-          </Paper>
-        )}
+          <Modal opened={privacyModalOpen} onClose={() => setPrivacyModalOpen(false)} title="Política de Privacidad">
+            <PrivacyPolicy />
+          </Modal>
 
-        <Modal opened={privacyModalOpen} onClose={() => setPrivacyModalOpen(false)} title="Política de Privacidad">
-          <PrivacyPolicy />
-        </Modal>
-
-        <Modal opened={legalModalOpen} onClose={() => setLegalModalOpen(false)} title="Aviso Legal">
-          <Legal />
-        </Modal>
-      </div>
+          <Modal opened={legalModalOpen} onClose={() => setLegalModalOpen(false)} title="Aviso Legal">
+            <Legal />
+          </Modal>
+        </div>
+      </Container>
     </>
   );
 };
