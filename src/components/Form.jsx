@@ -194,13 +194,21 @@ const Form = () => {
                       label={
                         <>
                           He leído, entendido y aceptado la{" "}
-                          <span style={{ color: "blue", cursor: "pointer" }} onClick={() => setPrivacyModalOpen(true)}>
+                          <button
+                            type="button"
+                            style={{ color: "blue", cursor: "pointer", background: "none", border: "none", padding: 0 }}
+                            onClick={() => setPrivacyModalOpen(true)}
+                          >
                             Política de Privacidad
-                          </span>{" "}
+                          </button>{" "}
                           y el{" "}
-                          <span style={{ color: "blue", cursor: "pointer" }} onClick={() => setLegalModalOpen(true)}>
+                          <button
+                            type="button"
+                            style={{ color: "blue", cursor: "pointer", background: "none", border: "none", padding: 0 }}
+                            onClick={() => setLegalModalOpen(true)}
+                          >
                             Aviso Legal
-                          </span>
+                          </button>
                           .
                         </>
                       }
@@ -232,11 +240,11 @@ const Form = () => {
             </Paper>
           )}
 
-          <Modal opened={privacyModalOpen} onClose={() => setPrivacyModalOpen(false)} title="Política de Privacidad">
+          <Modal size="lg" opened={privacyModalOpen} onClose={() => setPrivacyModalOpen(false)} centered>
             <PrivacyPolicy />
           </Modal>
 
-          <Modal opened={legalModalOpen} onClose={() => setLegalModalOpen(false)} title="Aviso Legal">
+          <Modal size="lg" opened={legalModalOpen} onClose={() => setLegalModalOpen(false)} centered>
             <Legal />
           </Modal>
         </div>
