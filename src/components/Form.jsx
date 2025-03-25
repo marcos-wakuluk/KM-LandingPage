@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import PrivacyPolicy from "./sections/PrivacyPolicy";
 import Legal from "./Legal";
-import { useParams } from "react-router-dom";
-import { Grid, Stack, TextInput, Checkbox, Button, Modal, Title, Paper, Text, Container } from "@mantine/core";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
+import { Grid, Stack, TextInput, Checkbox, Button, Modal, Text, Container, Title } from "@mantine/core";
 import PackageSelector from "../PackageSelector";
 import { KMWhite, planUrls } from "../utils/Constants";
 
@@ -20,12 +20,15 @@ const initialErrors = {
 
 const Form = () => {
   const { planName } = useParams();
+  const navigate = useNavigate();
+  const location = useLocation();
   const [formData, setFormData] = useState(initialState);
   const [errors, setErrors] = useState(initialErrors);
   const [privacyModalOpen, setPrivacyModalOpen] = useState(false);
   const [legalModalOpen, setLegalModalOpen] = useState(false);
   const [selectedMonths, setSelectedMonths] = useState(null);
   const [showConfirmation, setShowConfirmation] = useState(false);
+  const [paymentStatus, setPaymentStatus] = useState(null);
 
   const paymentButtonRef = useRef(null);
 
@@ -39,6 +42,19 @@ const Form = () => {
 
     loadMercadoPago();
   }, []);
+
+  useEffect(() => {
+    const queryParams = new URLSearchParams(location.search);
+    const status = queryParams.get("status");
+
+    if (status === "success") {
+      setPaymentStatus("success");
+      setShowConfirmation(true);
+    } else if (status === "failure") {
+      setPaymentStatus("failure");
+      setShowConfirmation(true);
+    }
+  }, [location.search]);
 
   const isFormValid = () => {
     return (
@@ -103,7 +119,7 @@ const Form = () => {
     window.history.pushState({}, "", newUrl);
 
     if (!showConfirmation) {
-      fetch("http://localhost:3000/send-email", {
+      fetch("http://localhost:3100/send-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -148,17 +164,28 @@ const Form = () => {
     }
   }, []);
 
+  useEffect(() => {
+    if (showConfirmation) {
+      const timer = setTimeout(() => {
+        setShowConfirmation(false);
+        navigate("/");
+      }, 5000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [showConfirmation, navigate]);
+
   return (
     <>
       <div className="bg-black py-5 flex justify-center">
         <img src={KMWhite} className="w-1/5 md:w-1/12" alt="" />
       </div>
-      <Container size="sm" className="flex flex-col justify-center">
+      <Container size="lg" className="flex flex-col justify-center">
         <div className="w-full max-w-screen-xl mx-auto my-10 px-5 sm:px-8 md:px-10 lg:px-16 xl:px-20">
           {!showConfirmation ? (
             <form>
               <Grid justify="center">
-                <Grid.Col span={{ base: 10, sm: 6, lg: 3 }}>
+                <Grid.Col span={{ base: 10, sm: 8, lg: 12 }}>
                   <Stack spacing="md">
                     <TextInput
                       type="email"
@@ -232,12 +259,25 @@ const Form = () => {
               </Grid>
             </form>
           ) : (
-            <Paper padding="md" style={{ textAlign: "center", marginTop: "20px" }}>
-              <Title order={2} color="teal">
-                ¡Bienvenido!
-              </Title>
-              <Text size="lg">Se ha enviado un email a {formData.email}.</Text>
-            </Paper>
+            <Modal opened={showConfirmation} onClose={() => setShowConfirmation(false)} centered size="md">
+              {paymentStatus === "success" ? (
+                <>
+                  <Title order={2} color="teal">
+                    ¡Bienvenido!
+                  </Title>
+                  <Text size="lg">
+                    Se ha enviado un email a {formData.email} con los datos para ingresar a la app KM PRO FITNESS.
+                  </Text>
+                </>
+              ) : (
+                <>
+                  <Title order={2} color="red">
+                    Pago Rechazado
+                  </Title>
+                  <Text size="lg">El pago ha sido rechazado. Por favor, inténtelo de nuevo.</Text>
+                </>
+              )}
+            </Modal>
           )}
 
           <Modal size="lg" opened={privacyModalOpen} onClose={() => setPrivacyModalOpen(false)} centered>
