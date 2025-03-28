@@ -34,7 +34,12 @@ const Testimonials = () => {
   return (
     <div className="relative w-full bg-custom-blue">
       <h2 className="text-white text-2xl font-bold p-4 uppercase">¿Qué opina la gente de nuestro servicio?</h2>
-      <div id="default-carousel" className="relative w-full overflow-hidden" data-carousel="slide" style={{ backgroundColor: "black" }}>
+      <div
+        id="default-carousel"
+        className="relative w-full overflow-hidden"
+        data-carousel="slide"
+        style={{ backgroundColor: "black" }}
+      >
         <div
           className={`flex items-center ${isTransitioning ? "transition-transform duration-1000 ease-in-out" : ""}`}
           style={{ transform: `translateX(-${startIndex * imageWidth}%)` }}
