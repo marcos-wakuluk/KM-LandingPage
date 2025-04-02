@@ -5,9 +5,8 @@ import classes from "./PackageSelector.module.css";
 import { PlansPrices } from "./utils/Constants";
 
 const data = [
-  { name: `1 Mes $${PlansPrices.aumentoMasa[1]}`, value: "1", description: "" },
-  { name: `3 Meses $${PlansPrices.aumentoMasa[3]}`, value: "3", description: "Ahorras un 25.79%" },
-  { name: `6 Meses $${PlansPrices.aumentoMasa[6]}`, value: "6", description: "Ahorras un 32.11%" },
+  { name: `3 Meses $${PlansPrices.aumentoMasa[3]}`, value: "3" },
+  { name: `6 Meses $${PlansPrices.aumentoMasa[6]}`, value: "6", description: "Ahorras un 8.51%" },
 ];
 
 const PackageSelector = ({ onSelect }) => {

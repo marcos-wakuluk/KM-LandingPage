@@ -268,10 +268,7 @@ export const planUrls = {
 };
 
 export const PlansPrices = {
-  aumentoMasa: { 1: "38000", 3: "84600", 6: "154800" },
-  perdidaGrasa: { 1: "38000", 3: "84600", 6: "154800" },
-  altoRendimiento: { 1: "38000", 3: "84600", 6: "154800" },
+  aumentoMasa: { 3: "84600", 6: "154800" },
+  perdidaGrasa: { 3: "84600", 6: "154800" },
+  altoRendimiento: { 3: "84600", 6: "154800" },
 };
-
-// items: [
-// ]
