@@ -29,6 +29,8 @@ const Form = () => {
   const [selectedMonths, setSelectedMonths] = useState(null);
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [paymentStatus, setPaymentStatus] = useState(null);
+  const [errorModalOpen, setErrorModalOpen] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const paymentButtonRef = useRef(null);
 
@@ -112,34 +114,56 @@ const Form = () => {
     }));
   };
 
-  const handleEmailButtonClick = () => {
-    const emailParam = encodeURIComponent(formData.email);
-    const currentPath = window.location.pathname;
-    const newUrl = `${currentPath}?email=${emailParam}`;
-    window.history.pushState({}, "", newUrl);
+  // const handleEmailButtonClick = () => {
+  //   const emailParam = encodeURIComponent(formData.email);
+  //   const currentPath = window.location.pathname;
+  //   const newUrl = `${currentPath}?email=${emailParam}`;
+  //   window.history.pushState({}, "", newUrl);
 
-    if (!showConfirmation) {
-      fetch("http://localhost:3100/send-email", {
+  //   if (!showConfirmation) {
+  //     fetch("http://localhost:3100/send-email", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({ email: formData.email }),
+  //     })
+  //       .then((response) => (response.ok ? response.json() : Promise.reject()))
+  //       .then(() => setShowConfirmation(true))
+  //       .catch(console.error);
+  //   }
+  // };
+
+  const handlePaymentButtonClick = async () => {
+    if (!isFormValid()) {
+      return;
+    }
+
+    try {
+      const response = await fetch("http://localhost:3100/check-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ email: formData.email }),
-      })
-        .then((response) => (response.ok ? response.json() : Promise.reject()))
-        .then(() => setShowConfirmation(true))
-        .catch(console.error);
-    }
-  };
+      });
 
-  const handlePaymentButtonClick = () => {
-    if (isFormValid()) {
+      const data = await response.json();
+      if (response.status !== 200) {
+        setErrorMessage(data.message);
+        setErrorModalOpen(true);
+        return;
+      }
+
       const planUrl = planUrls[planName]?.[selectedMonths];
       if (planUrl) {
         window.location.href = planUrl;
       } else {
         alert("No se ha encontrado un plan válido.");
       }
+    } catch (error) {
+      console.error("Error al verificar el email:", error);
+      alert("Hubo un problema al verificar el email. Por favor, inténtelo de nuevo.");
     }
   };
 
@@ -251,9 +275,6 @@ const Form = () => {
                     >
                       Suscribirme
                     </Button>
-                    <Button disabled={!formData.email} onClick={handleEmailButtonClick}>
-                      Probar Envío de Email
-                    </Button>
                   </Stack>
                 </Grid.Col>
               </Grid>
@@ -286,6 +307,20 @@ const Form = () => {
 
           <Modal size="lg" opened={legalModalOpen} onClose={() => setLegalModalOpen(false)} centered>
             <Legal />
+          </Modal>
+
+          <Modal
+            size="md"
+            opened={errorModalOpen}
+            onClose={() => setErrorModalOpen(false)}
+            centered
+            title={
+              <Title order={2} color="red">
+                Error
+              </Title>
+            }
+          >
+            <Text size="lg">{errorMessage}</Text>
           </Modal>
         </div>
       </Container>
