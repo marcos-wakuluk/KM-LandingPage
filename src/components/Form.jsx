@@ -6,7 +6,9 @@ import { Grid, Stack, TextInput, Checkbox, Button, Modal, Text, Container, Title
 import PackageSelector from "../PackageSelector";
 import { KMWhite, planUrls } from "../utils/Constants";
 
-const URL = import.meta.env.URL;
+console.log("ENV VARIABLES:", process.env);
+
+const URL = process.env.REACT_APP_URL_API || "";
 
 const initialState = {
   email: "",
