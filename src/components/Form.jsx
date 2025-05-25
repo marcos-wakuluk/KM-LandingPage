@@ -196,7 +196,13 @@ const Form = () => {
   return (
     <>
       <div className="bg-black py-5 flex justify-center">
-        <img src={KMWhite} className="w-1/5 md:w-1/12" alt="" />
+        <img
+          src={KMWhite}
+          className="w-1/5 md:w-1/12"
+          alt=""
+          style={{ cursor: "pointer" }}
+          onClick={() => navigate("/")}
+        />
       </div>
       <Container size="lg" className="flex flex-col justify-center">
         <div className="w-full max-w-screen-xl mx-auto my-10 px-5 sm:px-8 md:px-10 lg:px-16 xl:px-20">
