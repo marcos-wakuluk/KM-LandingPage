@@ -6,6 +6,8 @@ import { Grid, Stack, TextInput, Checkbox, Button, Modal, Text, Container, Title
 import PackageSelector from "../PackageSelector";
 import { KMWhite, planUrls } from "../utils/Constants";
 
+const URL = import.meta.env.URL;
+
 const initialState = {
   email: "",
   emailConfirm: "",
@@ -114,33 +116,13 @@ const Form = () => {
     }));
   };
 
-  const handleEmailButtonClick = () => {
-    const emailParam = encodeURIComponent(formData.email);
-    const currentPath = window.location.pathname;
-    const newUrl = `${currentPath}?email=${emailParam}`;
-    window.history.pushState({}, "", newUrl);
-
-    if (!showConfirmation) {
-      fetch("http://localhost:3100/send-email", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email: formData.email }),
-      })
-        .then((response) => (response.ok ? response.json() : Promise.reject()))
-        .then(() => setShowConfirmation(true))
-        .catch(console.error);
-    }
-  };
-
   const handlePaymentButtonClick = async () => {
     if (!isFormValid()) {
       return;
     }
 
     try {
-      const response = await fetch("http://localhost:3100/check-email", {
+      const response = await fetch(`${URL}/check-email`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -172,7 +154,7 @@ const Form = () => {
     const email = queryParams.get("email");
 
     if (email) {
-      fetch("http://localhost:3000/send-email", {
+      fetch(`${URL}/send-email`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -201,7 +183,7 @@ const Form = () => {
 
   useEffect(() => {
     if (paymentStatus === "success" && formData.email) {
-      fetch("http://localhost:3100/send-email", {
+      fetch(`${URL}/send-email`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
