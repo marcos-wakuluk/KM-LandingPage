@@ -226,6 +226,40 @@ export const Questions = [
         ],
       },
     ],
+    footer:
+      "Este método está diseñado para evitar la frustración de intentos fallidos y brindarte un camino claro y realista hacia tus objetivos.",
+  },
+  {
+    question: "¿Cómo continúa la asesoría cuando se cumplen los 3 meses y cada fase del Método?",
+    response:
+      "El Método PPR no es solo un plan de 3 meses, sino una estructura pensada para que puedas seguir progresando y consolidando tu cambio a largo plazo. Al completar el programa inicial, podés renovar tu asesoría por 3 o 6 meses más para seguir avanzando con el mismo nivel de soporte y personalización.",
+    title: ["🔹 ¿Qué incluye la continuación de la asesoría?"],
+    items: [
+      {
+        title: "✔️ Planes de entrenamiento con progresiones adecuadas",
+        items: ["Te cargamos nuevas rutinas en la app con ajustes para seguir avanzando."],
+      },
+      {
+        title: "✔️ Guía de alimentación personalizada",
+        items: ["Adaptamos tu alimentación según tus resultados y objetivos actuales."],
+      },
+      {
+        title: "✔️ Acceso continuo a la app",
+        items: ["Seguís teniendo todo tu plan en un solo lugar para mantener la organización y el control."],
+      },
+      {
+        title: "✔️ Acompañamiento 1 a 1",
+        items: ["Seguimos en contacto directo para responder dudas, ajustar estrategias y mantener tu motivación."],
+      },
+      {
+        title: "✔️ Pertenencia a la comunidad",
+        items: [
+          "Continuás en el grupo de WhatsApp para compartir avances, resolver dudas y rodearte de personas con tu misma mentalidad.",
+        ],
+      },
+    ],
+    footer:
+      "La clave del Método PPR es darte herramientas para sostener tus resultados a largo plazo y seguir mejorando con el tiempo. La asesoría no termina a los 3 meses: es un proceso continuo diseñado para que cada fase te acerque más a tu mejor versión.",
   },
   {
     question: "¿Que guias incluye la asesoria?",

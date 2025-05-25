@@ -50,6 +50,7 @@ const FrequentQuestions = () => {
                           ))}
                         </div>
                       ))}
+                      {question.footer && <p className="mb-2">{question.footer}</p>}
                     </div>
                   </td>
                 </tr>
