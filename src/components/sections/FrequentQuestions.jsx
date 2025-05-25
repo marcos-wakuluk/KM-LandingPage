@@ -35,7 +35,7 @@ const FrequentQuestions = () => {
                     </button>
                     <div
                       className={`mt-2 text-white transition-max-height duration-700 ease-in-out overflow-hidden ${
-                        openQuestions.includes(index) ? "max-h-96" : "max-h-0"
+                        openQuestions.includes(index) ? "max-h-[9999px]" : "max-h-0"
                       }`}
                     >
                       <p className="mb-2">{question.response}</p>

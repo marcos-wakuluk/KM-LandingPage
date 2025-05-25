@@ -85,6 +85,7 @@ const Section4 = () => {
           backgroundRepeat: "no-repeat",
           filter: "drop-shadow(2px 4px 6px rgb(59 130 246)",
           width: "90%",
+          padding: "10px",
         }}
       ></div>
     </div>
