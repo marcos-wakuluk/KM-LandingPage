@@ -114,25 +114,25 @@ const Form = () => {
     }));
   };
 
-  // const handleEmailButtonClick = () => {
-  //   const emailParam = encodeURIComponent(formData.email);
-  //   const currentPath = window.location.pathname;
-  //   const newUrl = `${currentPath}?email=${emailParam}`;
-  //   window.history.pushState({}, "", newUrl);
+  const handleEmailButtonClick = () => {
+    const emailParam = encodeURIComponent(formData.email);
+    const currentPath = window.location.pathname;
+    const newUrl = `${currentPath}?email=${emailParam}`;
+    window.history.pushState({}, "", newUrl);
 
-  //   if (!showConfirmation) {
-  //     fetch("http://localhost:3100/send-email", {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify({ email: formData.email }),
-  //     })
-  //       .then((response) => (response.ok ? response.json() : Promise.reject()))
-  //       .then(() => setShowConfirmation(true))
-  //       .catch(console.error);
-  //   }
-  // };
+    if (!showConfirmation) {
+      fetch("http://localhost:3100/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email: formData.email }),
+      })
+        .then((response) => (response.ok ? response.json() : Promise.reject()))
+        .then(() => setShowConfirmation(true))
+        .catch(console.error);
+    }
+  };
 
   const handlePaymentButtonClick = async () => {
     if (!isFormValid()) {
@@ -198,6 +198,18 @@ const Form = () => {
       return () => clearTimeout(timer);
     }
   }, [showConfirmation, navigate]);
+
+  useEffect(() => {
+    if (paymentStatus === "success" && formData.email) {
+      fetch("http://localhost:3100/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email: formData.email }),
+      }).catch(console.error);
+    }
+  }, [paymentStatus, formData.email]);
 
   return (
     <>
