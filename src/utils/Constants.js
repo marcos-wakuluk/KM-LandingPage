@@ -147,7 +147,7 @@ export const Questions = [
   {
     question: "¿Necesito experiencia previa en fitness?",
     response:
-      "Si, Descubre la eficacia de nuestro asesoramiento fitness consultando nuestros perfiles, donde hemos cosechado más de 2000 resultados en estos 8 años de dedicación. Te garantizamos que, al seguir tus planificaciones y aprovechar la experiencia de nuestros profesionales, experimentarás resultados constantes. Confía en nuestro historial de éxito y haz de tu viaje fitness una experiencia transformadora. ¡Los resultados hablan por sí mismos!",
+      "No, el asesoramiento esta diseñado para todos los niveles, desde principantes hasta atletas avanzados. Adaptamos los ejercicios y la nutricion a tu nivel actual y vamos prograsando a tu ritmo.",
   },
   {
     question: "¿Funciona el asesoramiento?",
