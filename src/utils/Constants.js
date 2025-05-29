@@ -286,7 +286,8 @@ export const Questions = [
 export const planUrls = {
   aumentoMasa: {
     1: "https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c93808491eb5ebe0192261073f41299",
-    3: "https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c93808491eb5f5701922613477b12d1",
+    // 3: "https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c93808491eb5f5701922613477b12d1",
+    3: "https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c93808491eb5f570192261fe94712d9",
     6: "https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c93808491eb5ebe01922617f90b129b",
   },
   perdidaGrasa: {
