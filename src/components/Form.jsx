@@ -60,6 +60,16 @@ const Form = () => {
     }
   }, [location.search]);
 
+  useEffect(() => {
+    if (!formData.email) {
+      const storedEmail = localStorage.getItem("km_email");
+      if (storedEmail) {
+        setFormData((prevData) => ({ ...prevData, email: storedEmail }));
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const isFormValid = () => {
     return (
       formData.email &&
@@ -137,6 +147,8 @@ const Form = () => {
         return;
       }
 
+      localStorage.setItem("km_email", formData.email);
+
       const planUrl = planUrls[planName]?.[selectedMonths];
       if (planUrl) {
         window.location.href = planUrl;
@@ -165,6 +177,7 @@ const Form = () => {
         .then(() => {
           setShowConfirmation(true);
           setFormData((prevData) => ({ ...prevData, email }));
+          localStorage.removeItem("km_email");
         })
         .catch(console.error);
     }
@@ -175,21 +188,26 @@ const Form = () => {
       const timer = setTimeout(() => {
         setShowConfirmation(false);
         navigate("/");
-      }, 5000);
+        localStorage.removeItem("km_email");
+      }, 20000);
 
       return () => clearTimeout(timer);
     }
   }, [showConfirmation, navigate]);
 
   useEffect(() => {
-    if (paymentStatus === "success" && formData.email) {
-      fetch(`${URL}/send-email`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email: formData.email }),
-      }).catch(console.error);
+    if (paymentStatus === "success") {
+      const emailToSend = formData.email || localStorage.getItem("km_email");
+      if (emailToSend) {
+        fetch(`${URL}/send-email`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email: emailToSend }),
+        }).catch(console.error);
+        localStorage.removeItem("km_email");
+      }
     }
   }, [paymentStatus, formData.email]);
 

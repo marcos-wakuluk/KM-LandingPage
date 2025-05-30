@@ -20,7 +20,6 @@ const PlanSection = () => {
             <h3 className="text-4xl font-bold mb-2 uppercase">muscular</h3>
             <p className="mb-4 text-xl font-bold">Plan 100% a medida</p>
             <p className="mb-2 text-7xl font-bold">{PlansPrices.aumentoMasa[1]}</p>
-            <p className="mb-4 font-bold">mensual*</p>
 
             <p className="mb-4">+ Más músculos y menos grasa</p>
             <p className="mb-4">+ Más autoestima y presencia</p>
@@ -52,7 +51,6 @@ const PlanSection = () => {
             <h3 className="text-3xl font-bold mb-2 uppercase">Perdida de grasa y recomposición corporal</h3>
             <p className="mb-6 text-xl font-bold">Plan 100% a medida</p>
             <p className="mb-2 text-7xl font-bold">{PlansPrices.perdidaGrasa[1]}</p>
-            <p className="mb-4 font-bold">USD/mensual*</p>
 
             <p className="mb-4">+ Chau grasa, hola músculos</p>
             <p className="mb-4">+ Chau celulitis y flacidez</p>
@@ -87,7 +85,6 @@ const PlanSection = () => {
             </h3>
             <p className="mb-4 text-xl font-bold">Plan 100% a medida</p>
             <p className="mb-2 text-7xl font-bold">{PlansPrices.altoRendimiento[1]}</p>
-            <p className="mb-4 font-bold">USD/mensual*</p>
 
             <p className="mb-4">+ Mayor rendimiento y competitividad</p>
             <p className="mb-4">+ Marcá la diferencia con tus adversarios</p>
