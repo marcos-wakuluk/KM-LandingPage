@@ -1,39 +1,64 @@
 import React from "react";
-import { KMWhite } from "../../utils/Constants";
+import { Container, Grid, Group, Image, Text, Title, Center, rem } from "@mantine/core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { KMWhite } from "../../utils/Constants";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-custom-black text-white py-8">
-      <div className="w-screen footer-container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-4 sm:gap-y-0 items-center justify-center">
-          <div className="contact-info text-center lg:text-left">
-            <h3 className="text-3xl font-semibold capitalize">contacto</h3>
-            <div className="ml-7 lg:ml-0 mt-4">
-              <a href="https://wa.me/message/EH4X57L5P2LPF1" target="_blank" rel="noopener noreferrer" className="inline-block">
-                <FontAwesomeIcon icon={faWhatsapp} className="text-xl mr-4" />
-              </a>
-              <a href="https://www.facebook.com/Kmprofitness" target="_blank" rel="noopener noreferrer" className="inline-block">
-                <FontAwesomeIcon icon={faFacebook} className="text-xl mr-4" />
-              </a>
-              <a href="https://www.instagram.com/kmprofitness" target="_blank" rel="noopener noreferrer" className="inline-block">
-                <FontAwesomeIcon icon={faInstagram} className="text-xl mr-4" />
-              </a>
-            </div>
-          </div>
-          <div className="flex flex-col items-center lg:items-center justify-center">
-            <div className="w-1/3">
-              <img src={KMWhite} alt="Logo KM" />
-            </div>
-            <div className="copyright mt-8 text-center">
-              <p className="text-sm">&copy; KM Pro Fitness {currentYear} - Todos los derechos reservados.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+    <footer style={{ backgroundColor: "#000", color: "#fff", paddingTop: rem(32), paddingBottom: rem(32) }}>
+      <Container size="xl">
+        <Grid align="center" justify="space-between">
+          {/* Contact Info */}
+          <Grid.Col span={6} lg={6}>
+            <Center>
+              <div>
+                <Title order={3} style={{ fontSize: rem(24), textTransform: "capitalize" }}>
+                  contacto
+                </Title>
+                <Group mt="md" justify="center">
+                  <a
+                    href="https://wa.me/message/EH4X57L5P2LPF1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ color: "white" }}
+                  >
+                    <FontAwesomeIcon icon={faWhatsapp} size="lg" style={{ marginRight: rem(16) }} />
+                  </a>
+                  <a
+                    href="https://www.facebook.com/Kmprofitness"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ color: "white" }}
+                  >
+                    <FontAwesomeIcon icon={faFacebook} size="lg" style={{ marginRight: rem(16) }} />
+                  </a>
+                  <a
+                    href="https://www.instagram.com/kmprofitness"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ color: "white" }}
+                  >
+                    <FontAwesomeIcon icon={faInstagram} size="lg" />
+                  </a>
+                </Group>
+              </div>
+            </Center>
+          </Grid.Col>
+
+          {/* Logo & Copyright */}
+          <Grid.Col span={6} lg={6}>
+            <Center style={{ flexDirection: "column" }}>
+              <Image src={KMWhite} alt="Logo KM" w="33%" fit="contain" />
+              <Text size="sm" mt="md" ta="center">
+                &copy; KM Pro Fitness {currentYear} - Todos los derechos reservados.
+              </Text>
+            </Center>
+          </Grid.Col>
+        </Grid>
+      </Container>
     </footer>
   );
 };
