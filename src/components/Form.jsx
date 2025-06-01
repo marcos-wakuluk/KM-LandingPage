@@ -132,7 +132,7 @@ const Form = () => {
     }
 
     try {
-      const response = await fetch(`${URL}/check-email`, {
+      const response = await fetch(`${URL}/web/check-email`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -166,7 +166,7 @@ const Form = () => {
     const email = queryParams.get("email");
 
     if (email) {
-      fetch(`${URL}/send-email`, {
+      fetch(`${URL}/web/send-email`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -199,7 +199,7 @@ const Form = () => {
     if (paymentStatus === "success") {
       const emailToSend = formData.email || localStorage.getItem("km_email");
       if (emailToSend) {
-        fetch(`${URL}/send-email`, {
+        fetch(`${URL}/web/send-email`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
